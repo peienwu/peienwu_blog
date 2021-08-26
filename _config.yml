@@ -108,3 +108,7 @@ deploy:
   type: git
   repo:  git@github.com:peienwu/peienwu.github.io.git
   branch: master
+  ignore_hidden: false
+
+  include:
+  - .nojekyll
