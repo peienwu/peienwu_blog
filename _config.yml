@@ -8,7 +8,9 @@ subtitle: ''
 description: 'Hello world'
 keywords:
 author: peienwu
-language: en
+language: 
+  - zh-tw
+  - en
 timezone: ''
 
 # URL

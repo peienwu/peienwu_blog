@@ -84,7 +84,7 @@ mathjax: true
 
 至於其他的算法，都會求出不正確的數值！
 
-:::info
+{% note default %}
 
 **Floyd warshall**
 這個演算法是處理全點對的最短路徑，如果有負環，那一定有任兩點的最短距離是錯誤的。不過我們一樣可以利用Floyd-Warshall演算法判斷圖中是否有負環，只要<font color="#f00">檢查每一個點走到自己的距離是否為負</font> ，即$dis[i][i]<0$ 是否成立，如果成立表示圖中有負環。
@@ -96,7 +96,7 @@ mathjax: true
 ![](https://i.imgur.com/Gkg2mex.jpg)
 
 此圖中如果邊 $\delta(B,A)$ 為一負邊，當A被移出集合U中便不會有任何再次被更新的機會，但卻因為這條負邊的關係，導致從$s$到$A$的最短距離並不會被正確更新到！
-:::
+{% endnote %}
 以上大概就是最短距離的演算法整理，還有一個全點對最短路徑Johnson’s Algorithm，大概就是對任一點做 Bellman-Ford（順便判斷有沒 有負環)，得到點權之後，用調整完的邊權做 V 次 Dijkstra，可以比Floyd-Warshall有更好的表現，到時候看。
 
 ## 上機作業
@@ -140,7 +140,7 @@ DIJKSTRA(G, w, s)
 
 這裡面使用$visit$判斷是否在集合 $S$ 中，但我們可以發現，如果在priority_queue中有兩個點的存在，第一個點處理完被加入集合 $S$ 中之後，第二次再次被拿出來進行處理時就不會有任何相鄰的點再一次被處理，這是因為第一次與第二次更新所使用的 $dis[cur]$ 是一樣的。因此，當一個點已經在visit中（也就是在集合 $s$ 中），我們可以直接換下一個點去執行（不過如果忘了visit也是沒差啦）。
 
-:::info
+{% note default %}
 **複雜度分析**
 
 以下分析一下演算法時間複雜度，總共有兩個時間複雜度，取決於使用何種資料結構來實作。
@@ -151,10 +151,10 @@ DIJKSTRA(G, w, s)
 
 **2. 時間複雜度 $O((V+E)\log V)$**
 這一題在 $O(n)$ 爆搜尋找改用heap去優化，因此複雜度就會是一樣執行V 輪利用 $O(logV)$ 找到距離 $dis$ 最小的點，同時將更新後的點放進heap中，我們知道放入heap的複雜度也是 $O(\log n)$，因此複雜度就會變成 $O(V\log V)+O(E\log V) = O((V+E)\log V)$。此實作方式一般在稀疏的圖中會有比較好的表現，從 $V$ 與 $E$ 的大小估計可以大致發現。
-:::
+{% endnote %}
 以下是程式法的實作，最需要注意的地方是pair的first跟second儲存的東西。在存圖時會使用（點,權重）搭配vector；而在priority_queue中，因為要對權重進行比較，因此會用（權重,點），需要特別注意別搞混了!
 
-:::success
+{% note success %}
 **Priority_Queue實作細節**
 
 預設的priority_queue會pop出目前heap中最大的元素（預設是less<>函數），如果要實作一個min heap 的話要使用greater<>函數，同時第二個傳進函數的參數要用一個vector！
@@ -163,7 +163,7 @@ DIJKSTRA(G, w, s)
 priority_queue <Type, vector<Type>, ComparisonType > min_heap;
 priority_queue <pii,vector<pii>,greater<pii>> pq;   
 ```
-:::
+{% endnote %}
 
 ```cpp=
 #include <bits/stdc++.h>
@@ -337,15 +337,14 @@ signed main(){
 
 當我們一直利用deque最前端的元素進行鬆弛，因為我們將邊權為0的元素放入最前端，用距離最小的那些點進行鬆弛，每一個點最多會被鬆弛一次，因此總時間複雜度為$O(V+E)$，比起用Dijktra直接做$O((V+E)\log V)$快了許多（此演算法之所以正確是因為其中一邊的權重是0，不管0接到誰他的權重也都是0，有點像「從最小層逐漸擴展」的概念）！
 
-:::warning
+{% note success %}
 小問題（出處[這裡](https://codeforces.com/blog/entry/22276)）
 1. Can we apply the same trick if our edge weights can only be 0 and x (x >= 0) ?
 2. Can we apply the same trick if our edge weights are x and x+1 (x >= 0) ?
 3. Can we apply the same trick if our edge weights are x and y (x,y >= 0) ?
 
-:::spoiler 解答
-YES,NO,NO
-:::
+解答YES,NO,NO
+{% endnote %}
 
 這題之所以可行是因為有一邊的權重是0，當點皆以權重為0串再一起時，他會是最短的，使用最短去更新接下來的點，因此第一題是正確的！但第二題與第三題是錯誤的，考慮以下點與邊的情況：
 
@@ -357,7 +356,7 @@ YES,NO,NO
 
 ![](https://i.imgur.com/wnXKbI8.png)
 
-:::info
+{% note info %}
 **比較一下記憶體用量**
 最主要還是時間複雜度的比較，不過既然空間已經爆了，時間也沒法比了QQ
 
@@ -376,7 +375,7 @@ vector<pii>edge[N2];
 int n,m,dis[N][N];
 bool visit[N][N],maze[N][N];
 ```
-:::
+{% endnote %}
 以下是使用deque實作01BFS的AC code：
 
 ```cpp=
@@ -443,7 +442,7 @@ signed main(){
 
 我們知道如果有用新加進來的邊 $\delta(a,b)$，則路徑可以被拆解成 $\delta(1,a)+\delta(a,b)+\delta(b,n)$。其中，我們可以用Dijkstra 一次尋找1到任何點的最短距離，那要如何處理路徑 $\delta(b,n)$ 呢？這就是**單一目的最短距離問題**，我們可以將所有的邊逆序，將終點做一次Dijkstra尋找最短路，這時候我們就可以用 $O(1)$ 的時間回答每一筆詢問，總時間複雜度：預處理$O((V+E)\log V)$，詢問 $O(Q)$。
 
-:::warning
+{% note info %}
 **測資小問題**
 有一筆測資如下，藍線是給定的路徑與權重，紅色是新加入的邊，如果按照上面 $\delta(1,a)+\delta(a,b)+\delta(b,n)$ 我們可以計算出從起點到終點的最短距離為：$2+1+4 = 7$，很明顯兩點之間的最短距離是 $5$ ，但因為原本作法會經過一條$\delta (B,C)$ 的重邊，造成算出來的距離是比較大的！這時候我們只要對最短路徑長度取min即可，也就是說在這種情況加入這一條邊並不會影響最短路徑的長度！
 
@@ -457,7 +456,7 @@ signed main(){
 > 3 2
 
 ![](https://i.imgur.com/Uocw0hc.png)
-:::
+{% endnote %}
 接下來是程式碼，之後如果遇到最短路徑的題目，一般來說會避免使用SPFA（除非有負邊），為了要避免最糟的時間複雜度，因此會使用Dijkstra來處理最短路徑問題！
 
 ```cpp=
@@ -615,7 +614,7 @@ signed main(){
 
 那就用**Floyd-Warshall**找最小的環就好！
 
-:::info
+{% note info %}
 **Floyd-Warshall**
 這就是dp的作法，用 $O(N^3)$ 的時間進行轉移，就能得到全點對的最短路徑。這邊有一個重要的轉移順序，也就是中點-起點-終點進行轉移，如果把dp展開就會發現中點必須在最外層進行轉移：
 
@@ -623,7 +622,7 @@ signed main(){
 > $$d[k+1][i][j] = min(d[k][i][j], d[k][i][k+1]+d[k][k+1][j])$$
 
 每一個k+1都是由k轉移而來，仰賴k的點的配對，因此必須最先轉移中點k的部分！（不過順序顛倒也不會怎樣啦，上面「課程內容」的地方有寫到）
-:::
+{% endnote %}
 同樣這一份code也可以判斷有沒有負環，只要ans小於0的話代表有負環（有的話距離是不能用的喔，因為Floyd-Warshall不能處理負環，但負邊是可以處理的）
 
 ```cpp=
@@ -766,7 +765,7 @@ signed main(){
 
 這一題蠻有趣的，首先他的邊權重都是1，因此我們可以直接用BFS尋找最短路徑，並且點第一次拜訪到時的就是該點的最短距離（BFS一層一層擴展）。
 
-:::info
+{% note primary %}
 **第一個想法：錯誤想法**
 我先將兩個起點與終點的最短路徑都找出來，把將過的邊都標上不能移除，將其他的邊全部拔掉。
 
@@ -776,15 +775,15 @@ signed main(){
 ![](https://i.imgur.com/QfbfF82.png)
 
 上圖紅色線段是$\delta(1,7)$的最短路徑、褐色是線段$\delta(3,6)$的最短路徑、黑色線段是皆以最短路徑之下可以被拔除的邊。但是如果將路徑$\delta(3,6)$換成是$(3,2)\to(2,4)\to(4,5)\to(5,6)$，被拔除的邊可以增過為三條。
-:::
+{% endnote %}
 
 這一題最重要的關鍵就是以$O(V^2)$枚舉所有點對（距離長度可以直接換算成邊的數量），可以先用$O(V(V+E)$的時間對每一個點用進行BFS，如此一來總複雜度即為$O(V^2+VE)$，所幸題目給定總共的邊數不會超過3000條，因此是可以在時間限制內完成枚舉。
 
-:::warning
+{% note primary %}
 枚舉路徑 $\delta(i,j)$ 為共同邊的時候，必須考慮起點與終點的方向，同時考慮從 $i\to j$ 以及從 $j\to i$ 兩個方向。以下圖為例，當枚舉都使用相同的起點以及終點，會讓下圖的 $(3,4)$ 被重複計算！
 
 ![](https://i.imgur.com/tjq8oe7.png)
-:::
+{% endnote %}
 
 以下是AC程式碼：
 ```cpp=
@@ -933,7 +932,7 @@ signed main(){
 
 跟上一題一樣，當我們每一次都從cost最小的點下手，在轉移的過程中如果將所有的點都走訪一遍，則他的路徑必定是最短的，因為每一次的更新都是從花費最小的路徑去轉移。
 
-:::info
+{% note primary %}
 **使用自定義比較函數放入Priority_queue中**
 
 Priority_queue中的比較函數需要使用到struct或class包覆的比較函數，若要回傳cost的最小值，則必須以大於來寫（有點像預設是pop出最大值，使用的卻是less<int>的比較函數）
@@ -945,7 +944,7 @@ struct cmp{
     }
 };
 ```
-:::
+{% endnote %}
 
 以下是AC Code：
 ```cpp=

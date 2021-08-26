@@ -18,10 +18,10 @@ mathjax: true
 ### 空間大小
 一般來說線段樹的陣列會開$seg[4\times n]$，由以下證明得到的結果：
 
-:::info
+{% note default %}
 對於一個有$2^k$的葉節點數的一棵樹，總共的節點共有 $\sum_{i=0}^k 2^i = 2^{k+1}-1$ 個節點。若今天陣列共有n個元素，則代表葉節點共有$2^{\lceil \log_2 n\rceil}$ 個，總節點數量共有$2^{\lceil \log_2 n\rceil+1}-1$ 個。
 假設$n = 2^k+p,0≤p≤2^k$，則帶入前面公式 $2^{\lceil \log_2 n\rceil}=2^{k+1}$，根據前面推得的總節點數可以知道為 $2^{k+2}-1$，其值恆小於$4n$，因此開$4n$的陣列一定可以容納整個線段樹。
-:::
+{% endnote %}
 由以上推倒可以知道一般都會開$seg[4\times n]$，但是如果n剛好是二的冪次，其實只會用到$2n$的空間，有一半會被浪費掉，不過沒差，因為多開總比少開來得好！
 [懶標線段樹程式碼連結](https://gist.github.com/peienwu/368723520e3c39e4e0edc27a0823da69)，懶標這東西實在折磨人，學長寫的一個堪稱不用下推的懶標程式碼，結果他是錯的！！！害我Debug超久，可惡:cry:
 ![](https://i.imgur.com/mEY8cFD.png)
@@ -135,7 +135,7 @@ struct Node{
 ### RMQ練習
 [題目連結](https://neoj.sprout.tw/problem/80/)
 RMQ = Range minimun query，也就是詢問一個區間的最小值。分析一下兩種不同作法的複雜度：
-:::success
+{% note default %}
 對於數列 $a_n$ 共n項，k筆詢問，每一次詢問區間$[l,r]$的最大、最小值
 **1. 暴力做**
 時間複雜度：<font color="#f00">詢問$O(n)$</font>
@@ -158,7 +158,7 @@ RMQ = Range minimun query，也就是詢問一個區間的最小值。分析一�
 **4. 稀疏表(Sparse Table)**
 時間複雜度：<font color="#f00">預處理 $O(nlogn)$、詢問$O(1)$</font>
 這個之後再看！
-:::
+{% endnote %}
 
 這一題就是基礎的要有支援區間查詢、單點修改的線段樹，也是最簡單的一種！
 ```cpp=
@@ -231,7 +231,7 @@ int main(){
 
 這一題要維護區間最大連續和，跟dp的最大連續和差了「區間」兩字，整個實作的方式跟複雜度就不一樣了。DP的作法如果直接套用在這一題的話，複雜度約為：$O(QN)$，絕對會炸裂，因此只能用線段樹維護這個東西。
 
-:::success
+{% note primary %}
 **區間最大連續和**
 在分治法的單元有提到分治法最重要的是假定左右兩側（對應過來就是兩子樹）是維護好的，也就是符合定義，要想的是要如何處理橫跨左右子樹的情況。
 要如何知道橫跨中間的最大值呢？這時候我們可以維護4個數值，來更新每一個線段樹上的節點的數值。
@@ -243,7 +243,7 @@ $cur.lmax = max(left.lmax,left.sum+right.lmax)$
 $cur.rmax = max(right.rmax,right.sum+left.rmax)$
 7. **區間最大連續和(tmax)**
 $cur.tmax = max(left.tmax,right.tmax,left.rmax+right.lmax)$
-:::
+{% endnote %}
 維護最大後綴跟最大前綴和（首跟末有被取到的情況），就可以$O(1)$ 維護每一個節點的區間最大連續和，複雜度：詢問$O(logn)$，因此總時間$O(Qlogn)$就可以AC了!
 
 
@@ -559,7 +559,7 @@ struct node{    //建立線段樹
 ```
 接下來就是在程式執行的過程中將 $2n$ 條邊依照y座標進行排序 $O(nlogn)$，接著依序使用掃描線搭配線段樹的修改，計算矩形的面積。最後就是輸出加起來的答案。
 
-:::warning
+{% note info %}
 **Debug 小錯誤**
 [Submission1:WA](https://tioj.ck.tp.edu.tw/submissions/261512)
 可以看到有一筆測資過不了，95分QQQ
@@ -571,7 +571,7 @@ struct node{    //建立線段樹
 ```cpp=
 stable_sort(arr,arr+(n<<1),cmp);
 ```
-:::
+{% endnote %}
 
 最後終於是程式碼的部分，以下：
 
