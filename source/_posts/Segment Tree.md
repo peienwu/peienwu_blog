@@ -24,7 +24,7 @@ mathjax: true
 {% endnote %}
 
 由以上推倒可以知道一般都會開$seg[4\times n]$，但是如果n剛好是二的冪次，其實只會用到$2n$的空間，有一半會被浪費掉，不過沒差，因為多開總比少開來得好！
-[懶標線段樹程式碼連結](https://gist.github.com/peienwu/368723520e3c39e4e0edc27a0823da69)，懶標這東西實在折磨人，學長寫的一個堪稱不用下推的懶標程式碼，結果他是錯的！！！害我Debug超久，可惡:cry:
+[懶標線段樹程式碼連結](https://gist.github.com/peienwu/368723520e3c39e4e0edc27a0823da69)，懶標這東西實在折磨人，學長寫的一個堪稱不用下推的懶標程式碼，結果他是錯的！！！害我Debug超久，可惡
 ![](https://i.imgur.com/mEY8cFD.png)
 這是學長的query程式碼，可以看到他回傳的是$(r-l)\times lazy[cur]$，這是錯誤的，因為不一定左右兩子樹都會被全部加上懶標的值（可能只會有部分交集），但這份code卻直接加上去，會多算而WA，要注意！
 ![](https://i.imgur.com/nsd2KVP.png)
