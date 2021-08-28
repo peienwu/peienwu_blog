@@ -4,7 +4,9 @@ date: 2021-8-15
 tags: 
     - 2020資訊之芽
     - 2021暑期筆記
-categories: 暑期算法筆記
+categories:
+    - C++進階主題
+    - 最短路徑
 mathjax: true
 ---
 
@@ -53,6 +55,7 @@ mathjax: true
     - 每次 Relax 後只能優化單一子路徑
     - 共有V個頂點，需要有V-1 條子路徑，每一次一條
     - 檢查負環：做完之後卻有滿足$d[v] > d[u]+w(u,v)$ ，表示有負環
+
 ### 優化：SPFA(Shortest Path Faster Algorithm)
 - 每次只relax更新過的點
 - 使用queue優化，有點像BFS過程

@@ -43,7 +43,7 @@ favicon:
   small: /images/icon-16-16.png
   medium: /images/icon-32-32.png
   apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  #safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -99,8 +99,8 @@ creative_commons:
 # Schemes
 #scheme: Muse
 #scheme: Mist
-scheme: Pisces
-#scheme: Gemini
+#scheme: Pisces
+scheme: Gemini
 
 # Dark Mode
 darkmode: false
@@ -116,11 +116,11 @@ darkmode: false
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  home: / || home
-  archives: /archives/ || archive
-  categories: /categories/ || th
-  tags: /tags/ || tags
-  about: /about/ || user
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+  about: /about/ || fa fa-user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -178,16 +178,17 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
+  GitHub: https://github.com/peienwu || fab fa-github
+  E-Mail: mailto:ck1090758@gl.ck.tp.edu.tw || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
-  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
+  FB Page: https://www.facebook.com/peien.wu.58/ || fab fa-facebook
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
   #YouTube: https://youtube.com/yourname || fab fa-youtube
-  #Instagram: https://instagram.com/yourname || fab fa-instagram
+  #Instagram: https://instagram.com/peienwu || fab fa-instagram
   #Skype: skype:yourname?call|chat || fab fa-skype
+  HackMD: https://hackmd.io/@peienwu || fas fa-file-alt
 
 social_icons:
   enable: true
@@ -202,7 +203,7 @@ links_settings:
   layout: block
 
 links:
-  #Title: http://yoursite.com
+  #Title: https://peienwu.com
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -244,16 +245,24 @@ post_meta:
   item_text: true
   created_at: true
   updated_at:
-    enable: true
+    enable: false
     another_day: true
   categories: true
 
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
+  symbols: true             # 文章是否顯示字數統計
+  time: true                # 文章是否顯示閱讀時間
+  total_symbols: true       # 網頁底部是否顯示字數統計
+  total_time: true          # 網頁底部是否顯示閱讀時間
+  exclude_codeblock: false  # 排除程式碼字數統計
+  awl: 2                    #平均文字長度，中文為 2, 英文為 5, 預設為 4
+  wpm: 275                  #一分鐘閱讀字數，預設為 275
+  suffix: "分鐘"
   separated_meta: true
   item_text_post: true
-  item_text_total: false
+  item_text_total: true
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -314,7 +323,7 @@ post_navigation: left
 tagcloud:
   # All values below are same as default, change them by yourself.
   min: 12 # Minimun font size in px
-  max: 30 # Maxium font size in px
+  max: 20 # Maxium font size in px
   start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
   end: "#111" # End color (hex, rgba, hsla or color keywords)
   amount: 200 # Amount of tags, change it if you have more than 200 tags
@@ -362,14 +371,14 @@ codeblock:
     # Show text copy result.
     show_result: true
     # Available values: default | flat | mac
-    style:
+    style: 
 
 back2top:
   enable: true
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
@@ -422,7 +431,7 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
+    family: Arial
     size:
 
   # Font settings for site title (.site-title).
@@ -740,7 +749,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
@@ -751,6 +760,11 @@ local_search:
   # Preload the search data when the page loads.
   preload: false
 
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
 # Swiftype Search API Key
 swiftype_key:
 
@@ -789,7 +803,7 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
+  style: flat
   icons: false
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
@@ -864,8 +878,8 @@ three:
 # For more information: https://github.com/zproo/canvas-ribbon
 canvas_ribbon:
   enable: false
-  size: 300 # The width of the ribbon
-  alpha: 0.6 # The transparency of the ribbon
+  size: 20 # The width of the ribbon
+  alpha: 0.5 # The transparency of the ribbon
   zIndex: -1 # The display level of the ribbon
 
 

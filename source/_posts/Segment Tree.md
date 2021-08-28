@@ -4,7 +4,10 @@ date: 2021-8-5
 tags: 
     - 2020資訊之芽
     - 2021暑假筆記
-categories: 暑期算法筆記
+categories: 
+    - C++進階主題
+    - 線段樹
+
 mathjax: true
 ---
 
