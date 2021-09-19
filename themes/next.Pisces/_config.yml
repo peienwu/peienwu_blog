@@ -257,8 +257,8 @@ symbols_count_time:
   total_symbols: true       # 網頁底部是否顯示字數統計
   total_time: true          # 網頁底部是否顯示閱讀時間
   exclude_codeblock: false  # 排除程式碼字數統計
-  awl: 2                    #平均文字長度，中文為 2, 英文為 5, 預設為 4
-  wpm: 275                  #一分鐘閱讀字數，預設為 275
+  awl: 2                    # 平均文字長度，中文為 2, 英文為 5, 預設為 4
+  wpm: 275                  # 一分鐘閱讀字數，預設為 275
   suffix: "分鐘"
   separated_meta: true
   item_text_post: true
@@ -591,7 +591,7 @@ comments:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: peienwu1216
   count: true
   #post_meta_order: 0
@@ -620,16 +620,16 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
-  notify: false # Mail notifier
+  enable: true
+  appid: 30Nkg1FodDSgkXoUsCSP43WB-MdYXbMMI
+  appkey: 6htzJsnb35Aur50anLOH62bF
+  notify: true
   verify: false # Verification code
-  placeholder: Just go go # Comment box placeholder
+  placeholder: 按這裡留言一下唄
   avatar: mm # Gravatar style
-  guest_info: nick,mail,link # Custom comment header
+  guest_info: nick,mail # Custom comment header
   pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
+  language: en
   visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
