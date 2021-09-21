@@ -523,14 +523,10 @@
 <p><img src="https://i.imgur.com/Zoe8Aes.png" alt=""></p>
 <p>很討厭的，他沒有https，也就是鎖頭，在這種情況下，瀏覽器就會自動設置為<font color="#f00">不安全</font>的網站，接下來早上的時間都拿去處理這個問題。在設定一些SSH以及https的安全性設定之後，終於，在訪問網站時拿到了鎖頭的認證！</p>
 <p><img src="https://i.imgur.com/jguOHwH.png" alt=""></p>
-<h3 id="留言板更新"><a href="#留言板更新" class="headerlink" title="留言板更新"></a>留言板更新</h3><p>最近重新登入後發現文章底部都是一堆Disqus的廣告，真的有夠討厭，如果要消除廣告的方法只剩下付費，好討厭！於是我決定換一個評論系統，叫做<a href="https://valine.js.org/">Valine</a> 的系統，他的優點是支援Emoji 😉、MarkDown 全语法支持，而且<strong>沒有廣告</strong>！大概的留言就像以下這樣：<br><img src="https://i.imgur.com/xgmM0EX.png" alt=""></p>
-<p>支援Markdown的留言真的很酷！</p>
-<p>至於留言管理的部分，則是用<a href="https://leancloud.app/">LeanCloud</a> 來實現，可以刪留言之類的XD<br><img src="https://i.imgur.com/Zmtl0u8.png" alt=""></p>
 <h2 id="架設心得"><a href="#架設心得" class="headerlink" title="架設心得"></a>架設心得</h2><p>部落格以後會常常更新，最近也會陸續把之前的文章放到部落格上面。整個網站從誕生到現在的結果已經花了15個小時，其中在Debug的時間應該佔了大多數！</p>
 <p>遇到了幾個麻煩的問題，首先碰到的是本地的資料無法上傳到Github，終端機冒出來的是：<font color="#f00">Please make sure you have the correct access rights and the repository exists.</font>。這個錯誤超級煩，爬了一堆文結果他要在GitHub上面設定ssh金鑰之類的東西，才能獲取從本地更新的權限。結果網路上的文章說我要開啟一個名叫”.ssh”的資料夾，可是我翻遍了我的電腦也找不到這一個資料夾！後來我是利用終端機，輸入路徑位置硬是把那一個資料夾打開，它是一個透明的資料夾，還是第一次遇到！</p>
 <p>接著是終端機跑出一堆error，那時候真的差點崩潰，花了超久架設的東西，竟然跑出這麼多的錯誤！難道全部的東西都付之一炬了嗎？翻了每一個被變更過的資料夾，才發現到在user_name的地方踩了雷，把他變回原本的設定就好了，真是不幸中的大幸，幸好我還能把東西救回來！</p>
 <p>最後，終於能用https的前綴連到我的網站：<a href="https://peienwu.com">https://peienwu.com</a> 。如果要打www開頭也是可以連得上，直接打 peienwu.com 也可以順利連上！</p>
-<p>我有點看不懂</p>
 ]]></content>
       <categories>
         <category>部落格架設</category>
