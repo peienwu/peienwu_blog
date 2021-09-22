@@ -45,10 +45,8 @@
 <meta property="og:image" content="https://i.imgur.com/3lPv0uW.png">
 <meta property="og:image" content="https://i.imgur.com/Zoe8Aes.png">
 <meta property="og:image" content="https://i.imgur.com/jguOHwH.png">
-<meta property="og:image" content="https://i.imgur.com/xgmM0EX.png">
-<meta property="og:image" content="https://i.imgur.com/Zmtl0u8.png">
 <meta property="article:published_time" content="2021-08-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-21T14:49:10.023Z">
+<meta property="article:modified_time" content="2021-09-22T15:35:46.369Z">
 <meta property="article:author" content="peienwu">
 <meta property="article:tag" content="個人部落格">
 <meta property="article:tag" content="網站架設">
@@ -290,14 +288,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>3.3k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>3 分鐘</span>
+              <span>2 分鐘</span>
             </span>
 
         </div>
@@ -384,19 +382,6 @@
 <p><img src="https://i.imgur.com/Zoe8Aes.png" alt=""></p>
 <p>很討厭的，他沒有https，也就是鎖頭，在這種情況下，瀏覽器就會自動設置為<font color="#f00">不安全</font>的網站，接下來早上的時間都拿去處理這個問題。在設定一些SSH以及https的安全性設定之後，終於，在訪問網站時拿到了鎖頭的認證！</p>
 <p><img src="https://i.imgur.com/jguOHwH.png" alt=""></p>
-<h3 id="留言板更新"><a href="#留言板更新" class="headerlink" title="留言板更新"></a>留言板更新</h3><blockquote>
-<p>[time=Sun, Sep 19, 2021 9:04 PM]</p>
-</blockquote>
-<p>最近重新登入後發現文章底部都是一堆Disqus的廣告，真的有夠討厭，如果要消除廣告的方法只剩下付費，好討厭！於是我決定換一個評論系統，叫做<a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a> 的系統，他的優點是支援Emoji 😉、MarkDown 全语法支持，而且<strong>沒有廣告</strong>！大概的留言就像以下這樣：<br><img src="https://i.imgur.com/xgmM0EX.png" alt=""></p>
-<p>支援Markdown的留言真的很酷！</p>
-<p>至於留言管理的部分，則是用<a target="_blank" rel="noopener" href="https://leancloud.app/">LeanCloud</a> 來實現，可以刪留言之類的XD<br><img src="https://i.imgur.com/Zmtl0u8.png" alt=""></p>
-<h3 id="抱怨一下"><a href="#抱怨一下" class="headerlink" title="抱怨一下"></a>抱怨一下</h3><p>今天在用Icloud 的時候，不小心把電腦上所有的檔案全部刪掉了，哭啊，這真是嚴重的事情ＱＱＱ，用到快掛了！當然，我電腦上的所有東西都不見了，也包括這一個部落格的本地程式碼，我用了 google drive 的備份，可惜那很難下載，所以我就用了github原本的備份的東西。</p>
-<p>這真是不幸中的大幸，還好github的備份直接下載就可以直接用，不用特別再設定一些奇怪的東西，但所有的 hexo 指令都不見了，git的指令也都不見了，必須要重新設定。</p>
-<p>這邊有一個小東西，就是下面這一行警告，就是要你把push設定成你要push的地方，不然只打一個push他並不會知道要push去哪裏，所以設定一下repo的位置就好了。</p>
-<blockquote>
-<p>git push —set-upstream origin master</p>
-</blockquote>
-<p>當然還有一堆bug ，只好慢慢爬文嘍，當你看到這一段文字，也就代表我成功找到解決辦法了！</p>
 <h2 id="架設心得"><a href="#架設心得" class="headerlink" title="架設心得"></a>架設心得</h2><p>部落格以後會常常更新，最近也會陸續把之前的文章放到部落格上面。整個網站從誕生到現在的結果已經花了15個小時，其中在Debug的時間應該佔了大多數！</p>
 <p>遇到了幾個麻煩的問題，首先碰到的是本地的資料無法上傳到Github，終端機冒出來的是：<font color="#f00">Please make sure you have the correct access rights and the repository exists.</font>。這個錯誤超級煩，爬了一堆文結果他要在GitHub上面設定ssh金鑰之類的東西，才能獲取從本地更新的權限。結果網路上的文章說我要開啟一個名叫”.ssh”的資料夾，可是我翻遍了我的電腦也找不到這一個資料夾！後來我是利用終端機，輸入路徑位置硬是把那一個資料夾打開，它是一個透明的資料夾，還是第一次遇到！</p>
 <p>接著是終端機跑出一堆error，那時候真的差點崩潰，花了超久架設的東西，竟然跑出這麼多的錯誤！難道全部的東西都付之一炬了嗎？翻了每一個被變更過的資料夾，才發現到在user_name的地方踩了雷，把他變回原本的設定就好了，真是不幸中的大幸，幸好我還能把東西救回來！</p>
@@ -486,7 +471,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E5%9F%9F%E7%A8%AE%E9%A1%9E"><span class="nav-number">1.</span> <span class="nav-text">網域種類</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">Hexo 安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub%E5%90%8C%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">GitHub同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%8E%9B%E5%AE%89%E8%A3%9D"><span class="nav-number">4.</span> <span class="nav-text">外掛安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-NexT-%E7%BE%8E%E5%8C%96"><span class="nav-number">4.1.</span> <span class="nav-text">Hexo NexT 美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disqus-%E7%95%99%E8%A8%80%E6%9D%BF%E5%8A%9F%E8%83%BD"><span class="nav-number">4.2.</span> <span class="nav-text">Disqus 留言板功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-Analytics-%E8%BF%BD%E8%B9%A4%E5%88%86%E6%9E%90"><span class="nav-number">4.3.</span> <span class="nav-text">Google Analytics 追蹤分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%BC%E8%B2%B7%E5%80%8B%E4%BA%BA%E7%B6%B2%E5%9D%80"><span class="nav-number">4.4.</span> <span class="nav-text">購買個人網址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%99%E8%A8%80%E6%9D%BF%E6%9B%B4%E6%96%B0"><span class="nav-number">4.5.</span> <span class="nav-text">留言板更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%B1%E6%80%A8%E4%B8%80%E4%B8%8B"><span class="nav-number">4.6.</span> <span class="nav-text">抱怨一下</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%B6%E8%A8%AD%E5%BF%83%E5%BE%97"><span class="nav-number">5.</span> <span class="nav-text">架設心得</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E5%9F%9F%E7%A8%AE%E9%A1%9E"><span class="nav-number">1.</span> <span class="nav-text">網域種類</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">Hexo 安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub%E5%90%8C%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">GitHub同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%8E%9B%E5%AE%89%E8%A3%9D"><span class="nav-number">4.</span> <span class="nav-text">外掛安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-NexT-%E7%BE%8E%E5%8C%96"><span class="nav-number">4.1.</span> <span class="nav-text">Hexo NexT 美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disqus-%E7%95%99%E8%A8%80%E6%9D%BF%E5%8A%9F%E8%83%BD"><span class="nav-number">4.2.</span> <span class="nav-text">Disqus 留言板功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-Analytics-%E8%BF%BD%E8%B9%A4%E5%88%86%E6%9E%90"><span class="nav-number">4.3.</span> <span class="nav-text">Google Analytics 追蹤分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%BC%E8%B2%B7%E5%80%8B%E4%BA%BA%E7%B6%B2%E5%9D%80"><span class="nav-number">4.4.</span> <span class="nav-text">購買個人網址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%B6%E8%A8%AD%E5%BF%83%E5%BE%97"><span class="nav-number">5.</span> <span class="nav-text">架設心得</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -566,13 +551,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">總字數：</span>
-    <span title="總字數">113k</span>
+    <span title="總字數">112k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">所需總閱讀時間 &asymp;</span>
-    <span title="所需總閱讀時間">1:43</span>
+    <span title="所需總閱讀時間">1:42</span>
 </div>
 
         
