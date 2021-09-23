@@ -107,4 +107,4 @@ theme: next.Pisces
 deploy:
   type: git
   repo:  git@github.com:peienwu/peienwu_blog.git
-  branch: master
+  branch: gh-pages
