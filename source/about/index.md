@@ -17,3 +17,6 @@ date: 2021-08-25 15:25:20
 * [TIOJ](https://tioj.ck.tp.edu.tw/users/peienwu)
 * [NEOJ](https://neoj.sprout.tw/profile/2631/)
 * [都沒在打的CF](https://codeforces.com/profile/peienwu)
+
+## 資訊之芽算法班筆記
+整理成書本模式，可以點點看[這裡](https://hackmd.io/@peienwu/sprout)！
