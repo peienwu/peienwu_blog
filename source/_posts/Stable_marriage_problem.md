@@ -5,7 +5,7 @@ tags:
     - 匹配
     - 數學
 categories:
-    - 數學
+    - 數學筆記
 mathjax: true
 ---
 
@@ -145,10 +145,9 @@ signed main(){
 ## 延伸問題
 
 1. 證明男方求婚法會給出男性的最佳匹配。
-2. 證明是否對於所有的偏好順序都存在一組穩定的匹配？
-3. 如何有效率的找出所有可能的穩定匹配？
-4. 承上，根據Wiki所述，試證明$n$男$n$女穩定匹配數的平均會漸進於$e^{-1}n\ln n$。
-5. 證明找出穩定匹配數的問題是一個[#P-complete](https://en.wikipedia.org/wiki/%E2%99%AFP-complete)的問題。
+2. 如何有效率的找出所有可能的穩定匹配？
+3. 承上，根據Wiki所述，試證明$n$男$n$女穩定匹配數的平均會漸進於$e^{-1}n\ln n$。
+4. 證明找出穩定匹配數的問題是一個[#P-complete](https://en.wikipedia.org/wiki/%E2%99%AFP-complete)的問題。
 
 
 下圖是男女對數$n$跟穩定匹配數$S$的關係圖，其增長的速度與$n\ln n$同級：

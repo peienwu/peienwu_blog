@@ -1,5 +1,5 @@
 ---
-title: '糟糕，出現可悲 404 not found！'
+title: '糟糕，找不到此頁 404 not found！'
 date: 2020-09-12 23:01:35
 comments: false
 permalink: /404.html
