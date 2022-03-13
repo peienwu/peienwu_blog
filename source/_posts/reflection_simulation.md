@@ -29,7 +29,6 @@ mathjax: true
 平面的情況很好理解，入射角等於反射角，但當來到三維時，除了角度一樣之外，這三個向量還必須在同一個平面上
 
 <img src="https://i.imgur.com/mub19sF.png" width="400">
-![]( =400x)
 
 原題我們是利用已知的$\overrightarrow{BA},\overrightarrow{BC}$，利用菱形邊長相等且平分夾角的性質，將長度調整成一樣之後相加即可求出平面的法向量，進一步求得反射的平面
 
