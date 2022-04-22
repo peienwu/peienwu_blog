@@ -1,5 +1,5 @@
 ---
-title: 萬有引力與N體問體之探討
+title: 萬有引力與四星運動之探討
 date: 2022-4-22
 tags: 
     - 數學
@@ -31,9 +31,9 @@ $$F = \frac{GMm}{r^2}$$
 
 ![](https://i.imgur.com/mDnymhI.png)
 
-$$\omega = \frac{\Delta\theta}{\Delta t} = \frac{2\pi}{T}
-\\v = R\omega = \frac{2\pi R}{T}
-\\a = R\omega^2 =\frac{v^2}{R} =\frac{4\pi^2 R}{T^2}$$
+$$\begin{align}\omega &= \frac{\Delta\theta}{\Delta t} = \frac{2\pi}{T}
+\\v &= R\omega = \frac{2\pi R}{T}
+\\a &= R\omega^2 =\frac{v^2}{R} =\frac{4\pi^2 R}{T^2}\end{align}$$
 
 ### 橢圓性質
 
