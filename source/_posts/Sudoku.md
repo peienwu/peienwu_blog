@@ -1,5 +1,5 @@
 ---
-title: 數獨—以C++實作
+title: 以C++實作數獨問題（Sudoku）
 date: 2021-3-7
 tags: 
     - 數學
@@ -20,7 +20,9 @@ mathjax: true
 [NEOJ](https://neoj.sprout.tw/problem/62/)、[TIOJ](https://tioj.ck.tp.edu.tw/problems/1025)（他的範測給得不是很好閱讀XD
 
 ## 架構
+
 先想出以下的實作步驟，就可以透過程式碼實現
+
 1. 讀測資並處理
 2. 從左到右、由上而下，找出下一個要填入數字的位置
 3. 對每一個點要知道有哪些數字可以被放入（把明顯不行的剔除）
@@ -30,6 +32,7 @@ mathjax: true
 **DFS 剪枝！**
 
 **整個大致架構：**
+
 ```cpp=
 class Sudoku{
 private:
@@ -45,7 +48,9 @@ public:
     void dfs(int row, int col );
 };
 ```
+
 這可以讓main函式顯得更簡單：
+
 ```cpp=
 int main(){
     Sudoku sodoku1;//宣告物件
@@ -54,8 +59,11 @@ int main(){
     sodoku1.solving();//開始解
 }
 ```
+
 ## 輸入與輸出
+
 設計一個印出數獨的函式，讓輸出方便閱讀一點（一行81個字元有夠醜。。。
+
 ```cpp=
 void Sudoku::print(string s){
     cout<<endl<<"====="<<s<<"======"<<endl;
@@ -70,7 +78,9 @@ void Sudoku::print(string s){
     }
 }
 ```
+
 接下來是讀入測資，0代表空格
+
 ```cpp=
 void Sudoku::scan_maze(){
     for(int i=0;i<9;i++){
@@ -82,11 +92,13 @@ void Sudoku::scan_maze(){
     }
 }
 ```
+
 有了**好的輸出**可以讓眼睛比較輕鬆一點Q
 
 ## 檢查哪些數字可以試試
 
 這一個函式主要是實現上面的第三點，把明顯不行（在同一行、列、方格）出現過的數字剔除
+
 ```cpp=
 vector<int> Sudoku::select(int r, int c){
     bool box[9]={0};//把出現過的數字紀錄下來
@@ -109,7 +121,9 @@ vector<int> Sudoku::select(int r, int c){
     return ans;//把可以試試看得數字push進vector後回傳
 }
 ```
+
 在遞迴的時候很需要知道下一個要填空的位置在哪裏，又題目要求如果有多組解要輸出**字典序最小**的解，所以要從左而右再由上而下開始找
+
 ```cpp=
 int Sudoku::next_empty(int row, int col){
     int ind = col;
@@ -127,8 +141,8 @@ int Sudoku::next_empty(int row, int col){
 }
 ```
 
-
 ## 開始遞迴
+
 DFS!
 跟八皇后問題很像，都只不過八皇后問題只有**放跟不放**的問題，而數獨是要決定**放什麼**進去
 首先，找到第一個空格之後DFS，在DFS結束後記得要確認數獨<font color="#f00">結果有沒有符合數獨原本的定義</font>(要不然只會對第一個子題QQ)
@@ -155,7 +169,9 @@ void Sudoku::solving(){
     flag = false;
 }
 ```
+
 對每一種可能進行遞迴：
+
 ```cpp=
 void Sudoku::dfs(int row, int col ){
     int pos = next_empty(row, col),nr,nc;
@@ -177,7 +193,6 @@ void Sudoku::dfs(int row, int col ){
 }
 ```
 
-
 ---
 這份程式碼只是為了上傳oj，所以只需要一種情況就好
 [完整程式碼在這](https://pastebin.com/bxhCmAPV)
@@ -191,16 +206,14 @@ void Sudoku::dfs(int row, int col ){
 這是程式實測跑出來的結果，都吻合：
 ![](https://i.imgur.com/7I2kwtZ.png)
 
-
-
 ## 相關延伸：八皇后問題
+
 [題目連結](https://leetcode.com/problems/n-queens-ii/)
-這一份程式碼是leetcode八皇后問題的解。像下面這一張圖就是一組合法的解，透過遞迴可以找出每一組解。 
+這一份程式碼是leetcode八皇后問題的解。像下面這一張圖就是一組合法的解，透過遞迴可以找出每一組解。
 
 ![](https://i.imgur.com/gEH8Zyo.png)
 
 網路上的資料指出這是一個$NP-Complete$的問題，表示並沒有多項式時間的解法。透過2個簡單的函數（是否可行、遞迴函數）即可實作出來。以下表格給出n為1到11的合法解個數：
-
 
 | 1    | 2    | 3    |  4  |  5  |  6  |  7  |  8  |  9  |  10  |  11  |
 | ---- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- | --- |

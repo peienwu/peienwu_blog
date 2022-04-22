@@ -33,7 +33,6 @@ custom_file_path:
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
-
 # ---------------------------------------------------------------
 # Site Information Settings
 # See: https://theme-next.org/docs/getting-started/
@@ -64,7 +63,7 @@ footer:
     color: "#000000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright: 
+  copyright:
 
   # Powered by Hexo & NexT
   powered: false
@@ -91,7 +90,6 @@ creative_commons:
   post: false
   language:
 
-
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -104,7 +102,6 @@ scheme: Mist
 
 # Dark Mode
 darkmode: false
-
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -125,12 +122,10 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
-
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
   badges: false
-
 
 # ---------------------------------------------------------------
 # Sidebar Settings
@@ -227,7 +222,6 @@ chat:
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
 
-
 # ---------------------------------------------------------------
 # Post Settings
 # See: https://theme-next.org/docs/theme-settings/posts
@@ -252,13 +246,13 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
-  symbols: true             # 文章是否顯示字數統計
-  time: true                # 文章是否顯示閱讀時間
-  total_symbols: true       # 網頁底部是否顯示字數統計
-  total_time: true          # 網頁底部是否顯示閱讀時間
-  exclude_codeblock: false  # 排除程式碼字數統計
-  awl: 2                    # 平均文字長度，中文為 2, 英文為 5, 預設為 4
-  wpm: 275                  # 一分鐘閱讀字數，預設為 275
+  symbols: true # 文章是否顯示字數統計
+  time: false # 文章是否顯示閱讀時間
+  total_symbols: true # 網頁底部是否顯示字數統計
+  total_time: false # 網頁底部是否顯示閱讀時間
+  exclude_codeblock: true # 排除程式碼字數統計
+  awl: 2 # 平均文字長度，中文為 2, 英文為 5, 預設為 4
+  wpm: 275 # 一分鐘閱讀字數，預設為 275
   suffix: "分鐘"
   separated_meta: true
   item_text_post: true
@@ -313,7 +307,6 @@ post_edit:
 # Available values: left | right | false
 post_navigation: left
 
-
 # ---------------------------------------------------------------
 # Custom Page Settings
 # See: https://theme-next.org/docs/theme-settings/custom-pages
@@ -339,7 +332,6 @@ calendar:
   showDeleted: false
   singleEvents: true
   maxResults: 250
-
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
@@ -371,7 +363,7 @@ codeblock:
     # Show text copy result.
     show_result: true
     # Available values: default | flat | mac
-    style: 
+    style:
 
 back2top:
   enable: true
@@ -402,7 +394,6 @@ github_banner:
   enable: false
   permalink: https://github.com/yourname
   title: Follow me on GitHub
-
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -456,7 +447,6 @@ font:
     external: true
     family:
 
-
 # ---------------------------------------------------------------
 # SEO Settings
 # ---------------------------------------------------------------
@@ -489,7 +479,6 @@ baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: false
-
 
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
@@ -563,7 +552,6 @@ quicklink:
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   ignores:
-
 
 # ---------------------------------------------------------------
 # Comments Settings
@@ -655,7 +643,6 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
 
-
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
 # See: https://theme-next.org/docs/third-party-services/post-widgets
@@ -665,13 +652,12 @@ gitalk:
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id:     # <app_id>
-  color:  fc6423
+  id: # <app_id>
+  color: fc6423
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id:
-
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
@@ -729,7 +715,6 @@ busuanzi_count:
   post_views: true
   post_views_icon: fa fa-eye
 
-
 # ---------------------------------------------------------------
 # Search Services
 # See: https://theme-next.org/docs/third-party-services/search-services
@@ -768,7 +753,6 @@ search:
 # Swiftype Search API Key
 swiftype_key:
 
-
 # ---------------------------------------------------------------
 # Chat Services
 # See: https://theme-next.org/docs/third-party-services/chat-services
@@ -789,7 +773,6 @@ chatra:
 tidio:
   enable: false
   key: # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
-
 
 # ---------------------------------------------------------------
 # Tags Settings
@@ -829,7 +812,6 @@ mermaid:
   enable: false
   # Available themes: default | dark | forest | neutral
   theme: forest
-
 
 # ---------------------------------------------------------------
 # Animation Settings
@@ -881,7 +863,6 @@ canvas_ribbon:
   size: 20 # The width of the ribbon
   alpha: 0.5 # The transparency of the ribbon
   zIndex: -1 # The display level of the ribbon
-
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
