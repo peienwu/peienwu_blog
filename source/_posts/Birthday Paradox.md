@@ -1,5 +1,5 @@
 ---
-title: 生日問題（Birthday problem）
+title: 生日問題（Birthday Paradox）
 date: 2021-7-5
 tags: 
     - 數學
