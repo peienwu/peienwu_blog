@@ -248,7 +248,7 @@ post_meta:
 symbols_count_time:
   symbols: true # 文章是否顯示字數統計
   time: false # 文章是否顯示閱讀時間
-  total_symbols: true # 網頁底部是否顯示字數統計
+  total_symbols: false # 網頁底部是否顯示字數統計
   total_time: false # 網頁底部是否顯示閱讀時間
   exclude_codeblock: true # 排除程式碼字數統計
   awl: 2 # 平均文字長度，中文為 2, 英文為 5, 預設為 4
@@ -316,7 +316,7 @@ post_navigation: left
 tagcloud:
   # All values below are same as default, change them by yourself.
   min: 12 # Minimun font size in px
-  max: 20 # Maxium font size in px
+  max: 18 # Maxium font size in px
   start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
   end: "#111" # End color (hex, rgba, hsla or color keywords)
   amount: 200 # Amount of tags, change it if you have more than 200 tags
@@ -613,7 +613,7 @@ valine:
   appkey: 6htzJsnb35Aur50anLOH62bF
   notify: true
   verify: false # Verification code
-  placeholder: 按這裡留言一下唄
+  placeholder: 按這裡留言一下！(可使用Markdown)
   avatar: mm # Gravatar style
   guest_info: nick,mail # Custom comment header
   pageSize: 10 # Pagination size

@@ -1,5 +1,5 @@
 ---
-title: 歐拉總計函數 (Euler's $\phi$ Function)
+title: 歐拉函數 (Euler's φ Function)
 date: 2021-10-10
 tags: 
     - 數學
@@ -30,7 +30,7 @@ $$\begin{split}\phi(n) &= n(1-\frac{1}{p_1})(1-\frac{1}{p_2})\cdots(1-\frac{1}{p
 證明一個公式，可以先多加上一些限制，從簡單推導到較複雜的情況。
 
 1. $n$ 是質數
-這種情況比較好處理，因為所有小於等於 $n$ 的正整數都會和 $n$ 互質，因此對於 $n$ 是質數的情況下： 
+這種情況比較好處理，因為所有小於等於 $n$ 的正整數都會和 $n$ 互質，因此對於 $n$ 是質數的情況下：
 $$\phi(n) = n-1$$
 
 2. $n$ 是合數
@@ -59,7 +59,6 @@ t_1 & t_2 & \cdots & t_{\phi(n)}
 
 觀察一下每一直行，由於 $n$ 和 $m$ 互質，同一直行中的每一個數字和 $m$ 都會不同餘。在不同餘的情況下，每一直行都會有 $\phi(m)$ 個與 $m$ 互質的數字。因此，從上面的矩陣可以發現總共有 $\phi(n)\phi(m)$ 個與 $nm$ 互質的數字，因此有$\phi(nm)=\phi(n)\phi(m)$。
 
-
 有了上述性質之後，我們就可以直接推導公式：
 
 $$\begin{split}\phi(n) &=\phi(p_1^{k_1})\cdot\phi(p_2^{k_2})\cdots\phi(p_r^{k_r})
@@ -70,13 +69,13 @@ $$\begin{split}\phi(n) &=\phi(p_1^{k_1})\cdot\phi(p_2^{k_2})\cdots\phi(p_r^{k_r}
 以上就是歐拉函數公式的推導過程！
 
 ### 證明2
+
 使用到的是排容原理。這個證明就沒有像上面那麽繁雜，不過有點難理解就是了。首先我們討論 $n$ 的質因數分解由三個質數組成，寫成：$n = p_1^{k_1}\cdot p_2^{k_2}\cdot p_3^{k_3}$，假設在小於等於 $n$ 中能被 $p_1$,$p_2$,$p_3$ 給整除的數字集合為 $A_1,A_2,A_3$，則我們要求的就是：
 
-$$(A_1'	\cap A_2' \cap A_3') = (A_1 \cup A_2 \cup A_3)'$$
+$$(A_1' \cap A_2' \cap A_3') = (A_1 \cup A_2 \cup A_3)'$$
 
 我們要求的就是聯集的補集的部分：
 ![](https://i.imgur.com/iEWH5Na.png)
-
 
 這是公式展開的情況：
 
@@ -86,8 +85,8 @@ $$\begin{split}\phi(n) &= n(1-\frac{1}{p_1})(1-\frac{1}{p_2})(1-\frac{1}{p_3})
 
 這展開之後跟集合寫成的樣子是一樣的，根據排容原理也間接證明公式的正確性！
 
-
 ## 程式實現
+
 基本概念就是從2開始往後找所有的質因數，因為個數不重要，只要每一次找到之後更新答案即可。值得注意的是，最後必須對剩下的 $n$ 在做一次，其原因不難理解，當我有兩個質因數剩下還沒有被 i 走過的時候，因為兩個互質，因此必定有一個數會在迴圈內被走到，剩下那一個留下來的就會在外面被更新答案。
 
 ```cpp=
@@ -112,6 +111,7 @@ int main(){
     cout<<phi()<<endl;
 }
 ```
+
 這是用程式跑出來的[1到10000的歐拉函數](https://gist.github.com/peienwu/39cf7c563bae22597ac1d185b12c535f)，可以參考看看！
 
 ## 好難的圖形
@@ -119,6 +119,7 @@ int main(){
 這張圖是歐拉函數的函數圖形，x軸是 $n$，y軸則是 $\phi(n)$。利用python的matplotlib模組繪製出來的！
 
 以下為待解決問題：
+
 - [x] $(n,\phi(n))$ 的圖形中，斜率為 1,1/2,2/3,4/5,1/3，其原因？
 - [x] 這些斜率是否可以求出數字落在每一條線上的機率？
 - [ ] 函數總和的圖形，其方程式是如何推導的？
@@ -161,6 +162,7 @@ $n$ 的範圍是1到10000
 像1964就會是$\frac{1}{2}\times \frac{490}{491}$，後面的影響很小，所有大致上接近 $\frac{1}{2}$！
 
 #### 斜率 $\frac{1}{3}$ 的情況
+
 紅線標出來的是斜率為 $\frac{1}{3}$ 的線條。
 ![](https://i.imgur.com/h1SdBSa.png)
 
@@ -176,6 +178,7 @@ $n$ 的範圍是1到10000
 ![](https://i.imgur.com/OfSOsrW.png)
 
 #### 斜率 $\frac{4}{5}$ 的情況
+
 ![](https://i.imgur.com/GmB7mdI.png)
 
 一樣的情況，大多是5盛放某個大質數
@@ -401,7 +404,6 @@ plt.plot(x,y,'o',markersize = 2)
 plt.show()
 ```
 
-
 ### 倒數加總的圖形
 
 下圖則是每一個 $\phi$ 的倒數繪製出來的圖形：
@@ -457,15 +459,16 @@ plt.plot(x,y,'o',markersize = 1)
 plt.show()
 ```
 
-
 <br>
 
 **參考連結：**
-* [連結1](https://mathworld.wolfram.com/TotientFunction.html)
-* [連結2](https://mathworld.wolfram.com/TotientSummatoryFunction.html)
-* [連結3](https://mathworld.wolfram.com/search/?query=Totient+Function&x=0&y=0)
+
+- [連結1](https://mathworld.wolfram.com/TotientFunction.html)
+- [連結2](https://mathworld.wolfram.com/TotientSummatoryFunction.html)
+- [連結3](https://mathworld.wolfram.com/search/?query=Totient+Function&x=0&y=0)
 
 ## P2303 [SDOI2012] Longge 的问题
+
 [題目敘述](https://www.luogu.com.cn/problem/P2303)
 [Submission](https://www.luogu.com.cn/record/57881277)
 
@@ -505,4 +508,3 @@ signed main(){
     cout<<ans<<endl;
 }
 ```
-

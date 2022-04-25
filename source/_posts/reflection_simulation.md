@@ -1,5 +1,5 @@
 ---
-title: 以VPython模擬三維空間中的反射定律
+title: 三維空間中的反射定律模擬
 date: 2022-3-13
 tags: 
     - VPYTHON
@@ -10,19 +10,19 @@ categories:
 mathjax: true
 ---
 
-![](https://i.imgur.com/Qt5Ktgo.png)
-
 ## 簡介
 
 上週補習班開始教「平面方程式」，有一題範例感覺特別的酷，題目如下：
 
 > 空間坐標系中，有一平面鏡E，一雷射光線經過點A(1,-1,2)射向鏡面E上的點B(0,1,0)，反射又經過點C(4，-3，2），試求平面E的方程式為何？
 
+解法大概就是利用菱形對角線平分的概念求出平面方程式！由這一題延伸，我想看看當改變已知平面的各項參數時，反射光的向量會有怎麼樣的變化，於是就嘗試用VPython模擬出來！
+
 <!--more-->
 
 ![](https://i.imgur.com/CLng02c.png)
 
-解法大概就是利用菱形對角線平分的概念求出平面方程式！由這一題延伸，我想看看當改變已知平面的各項參數時，反射光的向量會有怎麼樣的變化，於是就嘗試用VPython模擬出來！
+![](https://i.imgur.com/Qt5Ktgo.png)
 
 ## 反射定律及數學
 
@@ -43,7 +43,6 @@ mathjax: true
 $$\begin{split}\overrightarrow{BC} &= \frac{2|\overrightarrow{BA}|\cos\theta}{|\vec n|}\vec n - \overrightarrow{BA}
 \\&=\frac{2|\overrightarrow{BA}|(\vec n\cdot\overrightarrow{BA})}{|\vec n|^2\,\overrightarrow{BA}}\vec n - \overrightarrow{BA}\end{split}$$
 
-
 ## 模擬及程式碼
 
 ### 使用說明
@@ -52,8 +51,6 @@ $$\begin{split}\overrightarrow{BC} &= \frac{2|\overrightarrow{BA}|\cos\theta}{|\
 他會要求輸入發射源的$x,y,z$座標，完成後可以利用鍵盤'A,S'鍵調整平面$ax+by+cz=0$上$a$的大小（A變大、S變小），$b$則是'B,N'鍵、$c$是'C,V'鍵。
 
 ![](https://i.imgur.com/BrP36SB.gif)
-
-
 
 利用以上的公式，我們建立各個物件、包含各個座標軸、反射平面以及入射反射光。模擬中兩個黃色的箭頭代表入射光及反射光的向量，灰色箭頭則是平面的法向量。
 
@@ -67,6 +64,7 @@ def dt(a,b):
 ```
 
 接著就是計算$|\vec n|$的長度sz，對$\vec n$取單位向量後乘上長度，並設為平面的法向量，將$\vec n$與入射光向量相減得到反射光向量
+
 ```python=
     sz = 2 * mag(ball.pos) * dt(plane.up,ball.pos) / (mag(plane.up)*mag(ball.pos))
     n = norm(plane.up) * sz

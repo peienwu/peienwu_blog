@@ -1,5 +1,5 @@
 ---
-title: 字串演算法例題
+title: 字串演算法例題 (String)
 date: 2021-9-5
 tags: 
     - 字串
@@ -12,6 +12,7 @@ mathjax: true
 ---
 
 ## 題目目錄
+
 - NEOJ 266 溫力的故事
 - NEOJ 265 欸迪的字串
 - NEOJ 267 自動完成系統
@@ -26,6 +27,7 @@ mathjax: true
 <!-- more -->
 
 ### NEOJ 266 溫力的故事
+
 [題目連結](https://neoj.sprout.tw/problem/266/)
 [Submission](https://neoj.sprout.tw/challenge/179031/)
 > 題目敘述
@@ -34,6 +36,7 @@ mathjax: true
 這一題在**隨機算法**做過，今天用字典樹Trie做一次。在隨機算法中，透過Rolling Hash的公式，對每一個字串生成一個值，利用這個值查詢出現的次數。如果我們用Trie的話，則是建立一棵指標樹，透過走法這一棵字典樹得知詢問字串出現的次數！
 
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -97,6 +100,7 @@ signed main(){
 ```
 
 ### NEOJ 265 欸迪的字串
+
 [題目連結](https://neoj.sprout.tw/problem/265/)
 [Submission](https://neoj.sprout.tw/challenge/179036/)
 > 題目敘述
@@ -104,12 +108,11 @@ signed main(){
 
 這一題在**隨機演算法**也有出現過，當時是用Rolling Hash的方式透過扣掉Hash的方法比對字串是否相同（推一下公式就知道）。現在要用的是**KMP演算法**，很複雜不好想。
 
-
-
 比較一下隨機跟KMP的時間，下方為KMP，上方則是隨機算法，兩者時間差了將近1倍，雖然兩者都可以在O(|T|)時間內進行匹配，但是建立Rolling Hash的常數是比較大的！
 ![](https://i.imgur.com/a7CPjyi.png)
 
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -169,6 +172,7 @@ signed main(){
 ```
 
 ### NEOJ 267 自動完成系統
+
 [題目連結](https://neoj.sprout.tw/problem/267/)
 [Submission](https://neoj.sprout.tw/challenge/179148/)
 > 題目敘述
@@ -177,6 +181,7 @@ signed main(){
 用字典樹Trie插入每一個字串，插入過程中返回從頭到開始new新的節點之間經過的節點樹，代表需要輸入多少個字元才能觸發自動完成系統。這一題是基礎的Trie應用。
 
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -246,6 +251,7 @@ int main(){
 ```
 
 ### NEOJ 264 欸迪的字串
+
 [題目連結](https://neoj.sprout.tw/problem/264/)
 [Submission](https://neoj.sprout.tw/challenge/179060/)
 > 題目敘述
@@ -254,6 +260,7 @@ int main(){
 這一題在一開始看到感覺好難，不過在慢慢理解 Z_Algorithm 之後，在講義中發現到這個問題也可以用這個演算法來解決！因為Z函數是滿足從i開始的最長前綴，因此當 $i$ 為 字串長度 $n$ 的因數的時候，只要 $i+Z[i+1]=n$ 成立，就必定可以用 $S[1:i]$ 組成字串 $S$ 。實作上要注意字串是0-base，i+1就相等於字串第i個位置，處理上要特別注意！
 
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -297,6 +304,7 @@ signed main(){
 ```
 
 ### ZJ d518: 文字抄寫 II
+
 [題目連結](https://zerojudge.tw/ShowProblem?problemid=d518)
 > 題目敘述
 若這個字串之前已經出現過，則輸出的出現號碼，若沒有則輸出它將被編寫的號碼.
@@ -304,6 +312,7 @@ signed main(){
 裸題Trie，不過要注意每一次要重置，將所有的實體Delete掉。
 
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -382,6 +391,7 @@ signed main(){
 ```
 
 ### TIOJ 1306 字串中的字串
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1306)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/263572)
 > 題目敘述
@@ -390,6 +400,7 @@ signed main(){
 裸KMP字串匹配，統計出現次數。可以嘗試不要看資料自己寫一次，會更了解KMP算法！
 
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -451,8 +462,8 @@ signed main(){
 }
 ```
 
-
 ### TIOJ 1321 好多回文 ndromePali
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1321)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/263962)
 > 題目敘述
@@ -469,9 +480,8 @@ signed main(){
 
 實作上很多細節，我DEBUG超久最後才想到不能枚舉所有字元，會出事（就像上面的三色WA），只要枚舉以 $'.'$ 為分割點的情況（分割在字元上就不行），還有很多細節，WA很多次才會知道XD
 
-
-
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -538,12 +548,12 @@ signed main(){
 ```
 
 ### ZJ d978: 最长回文字串
+
 [題目連結](https://zerojudge.tw/ShowProblem?problemid=d978)
 > 題目敘述
 題目即題意，給你一個字串，求出最長的回文字串長度為何？
 
 一題LPS的裸題，用Manacher's Algorithm可以將時間複雜度做到 $O(n)$！
-
 
 ```cpp=
 #include <bits/stdc++.h>
@@ -593,14 +603,13 @@ signed main(){
 }
 ```
 
-
 ### TIOJ 1725 Massacre at Camp Happy
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1725)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/264017)
 
 > 題目敘述：
 定義字串 A 和 B「k-幾乎相同」代表把字串 A 的前 k 字元搬到最後面時，與 B 恰有一個字元相異。給你兩個長度 ≤ $10^6$ 的字串 A 和 B，求所有使 A 和 B「k-幾乎相同」成立的 k 值。
-
 
 這一題好特別，一樣要用 $O(n)$ 的時間求出答案，對於每一個操作將前k個字元搬到後面，只能用 $O(1)$ 算出來到底符不符合一字元相異的條件。
 以兩個相等長度的字串 $A,B$ 為例，長度為 $l$，假設 $A=aabba,B = aacba$，兩者相差一個字元的情況下，必定會滿足$l = LCP(A,B)+LCP(rev(A),rev(B))+1$，其中rev函數表示reverse。
@@ -612,15 +621,19 @@ signed main(){
 {% note success %}
 **實作小細節**
 程式碼的第42行可以試著推推看逆序之後的尾巴的索引值為何。我是利用列出幾個數字之後推出來的，不過應該可以寫成比較嚴謹的數學證明！
+
 ```cpp=
 Z1[n+1+i]+Z2[2*n-i+1]+1 == n
 ```
+
 {% endnote %}
 
 #### 時間複雜度
+
 $O(n)$ 建立z函數，$O(n)$ 枚舉每一個起始點，總時間為 $O(n)$。
 
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -677,6 +690,7 @@ signed main(){
 ```
 
 ### TIOJ 1497 喝醉的宿主 The drunk host
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1497)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/264189)
 > 題目敘述
@@ -693,7 +707,6 @@ signed main(){
 {% note primary %}
 **實作小細節**
 我們要求進行 $O(\log n)$ 層的倍增，可以使用C++內建的log10()再用ceil去處理，但顯然有點慢，如果套用以下函數，它會回傳數字二進位之後最大的1前面總共有多少個0（前綴0的數量），與32相減（32是long long的關係）就是我們要的log的次數。
-
 
 ```cpp=
 int lg = __builtin_clz(n)
@@ -722,8 +735,8 @@ int lg = __builtin_clz(n)
 > test 9 - AC (score=0.000000, sig=0, time=0.170094, mem=7284)
 > test 10 - AC (score=0.000000, sig=0, time=0.140098, mem=7340)
 
-
 #### 程式碼
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -784,7 +797,9 @@ signed main(){
     rep(i,0,n-1)cout<<sa[i]<<'\n';
 }
 ```
+
 #### Radix Sort 優化
+
 [Submission](https://tioj.ck.tp.edu.tw/submissions/264407)
 
 比較一下 $O(n\log^2 n)$ 以及 $O(n\log n)$ 的時間，兩者花了近兩倍的時間差距。看了一下這一題的TopCoder，竟然可以做到十位數毫秒！如果要繼續優化成線性 $O(n)$ 的複雜度，就會使用到 DC3 的演算法，雖然好像很複雜不實用QQ
@@ -807,8 +822,6 @@ signed main(){
 > test 8 - AC (score=0.000000, sig=0, time=0.077631, mem=21952)
 > test 9 - AC (score=0.000000, sig=0, time=0.074905, mem=21340)
 > test 10 - AC (score=0.000000, sig=0, time=0.076732, mem=30160)
-
-
 
 #### 程式碼
 
@@ -896,13 +909,13 @@ signed main(){
 ```
 
 ### TIOJ 1515 Problem E. 似曾相識
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1515)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/264483)
 > 題目敘述
 裸後綴數組 LCP。
 
 這題我想好久，一直想不通轉移的條件以及k-1的原因，不過最後還是想通了！這一題只要把 $lcp$ 求出來之後，找最大值就是題目要求的答案。
-
 
 #### 程式碼
 
@@ -988,4 +1001,3 @@ signed main(){
 ## 心得
 
 字串演算法跟最短路徑、計算幾何比起來，數學推導成分就多了很多，有許多的遞迴概念，例如失敗函數以及z函數的概念，也有很多是要理解在不同條件下做什麼事，以及其他優化處理。最初的是字典樹Trie，就是一些資料結構的運用；接下來的KMP、Z Algorithm以及LPS就很吃觀念，追蹤整個程式的過程。最後是後綴數組，在這邊卡了超久，遲遲無法理解倍增的概念、以及LCP的作法。可能這就是頓悟吧，每天看了同篇解說很久之後，總有一天會突然頓悟，想到演算法的精髓！
-

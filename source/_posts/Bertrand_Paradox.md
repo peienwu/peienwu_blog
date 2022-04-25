@@ -1,5 +1,5 @@
 ---
-title: Bertrand Paradox with Simulations
+title: 伯特蘭悖論（Bertrand Paradox）
 date: 2022-2-7
 tags: 
     - 數學
@@ -17,7 +17,6 @@ Bertrand Paradox是Bertrand他在他的一本書中提到關於機率論的悖�
 悖論如下：給定一個平面上的圓，內接一個邊長為 $T$ 的正三角形。接著隨機產生園內的一條弦，想問這條弦的長度大於 $T$ 的機率有多大？
 <!--more-->
 以下三個方法會分別產生出三個不同的結果，影片、圖片部分是用*manim*以及*matplotlib*繪製而成的。
-
 
 ## 產生弦的不同方法
 
@@ -47,7 +46,6 @@ Bertrand Paradox是Bertrand他在他的一本書中提到關於機率論的悖�
 
 <img src="https://i.imgur.com/UGawzWw.png" alt="drawing" width="300"/>
 
-
 ### 方法3：隨機中點
 
 此作法是在園中隨機產生一個點，以此點為中點產生一條弦。以下圖來說，假設此點在小圓內，則弦長會大於 $T$，在小圓外則小於 $T$，若恰好落在小圓圓週上，則弦長等於 $T$。
@@ -64,7 +62,6 @@ Bertrand Paradox是Bertrand他在他的一本書中提到關於機率論的悖�
 
 <img src="https://i.imgur.com/kOaKQCL.png" alt="drawing" width="300"/>
 
-
 ## 三者比較
 
 利用*matplotlib*畫出每條弦的中點並留下軌跡，可以得到下面的圖形，隨機端點與隨機半徑產生的圖形比較相近，集中在圓的中心，而隨機中點的分佈則十分平均。
@@ -76,7 +73,6 @@ Bertrand Paradox是Bertrand他在他的一本書中提到關於機率論的悖�
 ### 方法2：隨機半徑
 
 ![](https://i.imgur.com/riz3ZQn.png)
-
 
 ### 方法3：隨機中點
 

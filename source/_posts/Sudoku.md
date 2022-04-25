@@ -1,5 +1,5 @@
 ---
-title: 以C++實作數獨問題（Sudoku）
+title: 數獨問題（Sudoku）：以C++實作
 date: 2021-3-7
 tags: 
     - 數學

@@ -1,5 +1,5 @@
 ---
-title: 2020資訊之芽—最短路徑例題
+title: 最短路徑例題（Shortest Path Problem）
 date: 2021-8-16
 tags: 
     - 2020資訊之芽
@@ -11,6 +11,7 @@ mathjax: true
 ---
 
 ## 題目目錄
+
 - 可魚果運輸問題
 - 百慕達三角洲
 - 江神與他的小火車
@@ -21,6 +22,7 @@ mathjax: true
 <!-- more -->
 
 ### 可魚果運輸問題
+
 [題目連結](https://neoj.sprout.tw/problem/391/)
 [Dijkstra's Algorithm](https://neoj.sprout.tw/challenge/178079/)
 [SPFA](https://neoj.sprout.tw/challenge/178078/)
@@ -37,6 +39,7 @@ mathjax: true
 
 這篇有[一篇論文](http://www-m3.ma.tum.de/foswiki/pub/MN0506/WebHome/dijkstra.pdf)是Dijkstra在針對最短路徑寫的論文（也就是以他名字命名的演算法論文），這篇只有三頁耶！
 以下是「演算法導論」這本書中演算法的虛擬碼：
+
 ```
 DIJKSTRA(G, w, s)
   1  INITIALIZE-SINGLE-SOURCE(G, s)
@@ -48,6 +51,7 @@ DIJKSTRA(G, w, s)
   7            for each vertex v ∈ Adj[u]
   8                do RELAX(u,v,w)
 ```
+
 其中集合 $S$ 在程式碼中代表的是visit，而集合 $Q$ 因為要操作取出最小元素的動作，因此會用priority_queue實現，以heap來進行 $O(\log n)$ 的插入以及取出。
 
 這裡面使用$visit$判斷是否在集合 $S$ 中，但我們可以發現，如果在priority_queue中有兩個點的存在，第一個點處理完被加入集合 $S$ 中之後，第二次再次被拿出來進行處理時就不會有任何相鄰的點再一次被處理，這是因為第一次與第二次更新所使用的 $dis[cur]$ 是一樣的。因此，當一個點已經在visit中（也就是在集合 $s$ 中），我們可以直接換下一個點去執行（不過如果忘了visit也是沒差啦）。
@@ -75,6 +79,7 @@ DIJKSTRA(G, w, s)
 priority_queue <Type, vector<Type>, ComparisonType > min_heap;
 priority_queue <pii,vector<pii>,greater<pii>> pq;   
 ```
+
 {% endnote %}
 
 ```cpp=
@@ -134,8 +139,10 @@ signed main(){
 ```
 
 #### Shortest Path Faster Algorithm(SPFA)
+
 這是一個使用queue最佳化的Bellman-Ford演算法，基本的使用方式跟BFS幾乎相同，在Bellman-Ford對邊進行更有效率的鬆弛(relaxation)。
 以下一樣是「演算法導論」中Bellman-Ford的虛擬碼：
+
 ```
 BELLMAN-FORD(G,w,s)
   1    INITIALIZE-SINGLE-SOURCE(G,s)
@@ -147,6 +154,7 @@ BELLMAN-FORD(G,w,s)
   7            then return FALSE
   8    return TRUE
 ```
+
 以下是SPFA的虛擬碼，如果節點有被實際鬆弛過，且節點不在queue中（同樣元素在queue中出現兩次沒有意義，因為只要確保有在queue中等會會被更新到就好，到它的最短距離不會被改變），便將此節點推入queue中。裡面存的是帶進行鬆弛的節點們，也就是被剛剛更新過的節點。我們可以利用$visit[ ]$來 $O(1)$ 判斷節點是否有在queue中！
 
 有進行判斷是否在queue中的（比較省空間一點）：
@@ -227,6 +235,7 @@ signed main(){
 ```
 
 ### 百慕達三角洲
+
 [題目連結](https://neoj.sprout.tw/problem/393/)
 > 題目大意：
 > 給定一張長n寬m的矩形圖，由"#"和"."組成，給定起點$(x_1,y_1)$以及終點$(x_2,y_2)$，必須最小化經過"."的次數，求最少需幾過幾次。
@@ -251,6 +260,7 @@ signed main(){
 
 {% note success %}
 小問題（出處[這裡](https://codeforces.com/blog/entry/22276)）
+
 1. Can we apply the same trick if our edge weights can only be 0 and x (x >= 0) ?
 2. Can we apply the same trick if our edge weights are x and x+1 (x >= 0) ?
 3. Can we apply the same trick if our edge weights are x and y (x,y >= 0) ?
@@ -263,8 +273,6 @@ signed main(){
 ![](https://i.imgur.com/BYojGwm.jpg)
 
 當我依照01BFS的方法不斷去用x更新其他的點，更新完之後會發現點1到點3的最短路徑應該是x+1，到時候又要再重新Relax一次，複雜度會爆炸喔（比SPFA可能還慘，因為當點三利用兩個x更新完之後，用它來做跟3所有相鄰的點，做完卻發現$(1,3)$有更短的距離，又必須重新全部更新一次！）總結來說，他只是用於只有兩種邊的情況，且其中一邊必須為0。
-
-
 
 ![](https://i.imgur.com/wnXKbI8.png)
 
@@ -281,12 +289,15 @@ int n,m,q,predecessor[N2],dis[N2];
 bool visit[N2],maze[N2];
 vector<pii>edge[N2];
 ```
+
 **AC**
+
 ```cpp=
 #define N 2003
 int n,m,dis[N][N];
 bool visit[N][N],maze[N][N];
 ```
+
 {% endnote %}
 以下是使用deque實作01BFS的AC code：
 
@@ -345,6 +356,7 @@ signed main(){
 ```
 
 ### 江神與他的小火車
+
 [題目連結](https://neoj.sprout.tw/problem/431/)
 
 > 題目大意
@@ -438,7 +450,9 @@ signed main(){
     }
 }
 ```
+
 ### 貨物運送計劃
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1641)
 
 > 題目敘述
@@ -452,9 +466,11 @@ $\delta(1,2)\to\delta(2,3)$，所付出的代價是$(1\times (1+1))\times (2+1)=
 我們可以透過將邊權取 $\log$ 之後，就可以利用Dijkstra進行最短路徑的計算，因為取 $\log$ 後的加減運算等同於原本的乘法運算，只要最後把算出來的答案次方即可！
 
 這一題的輸出要求科學記號（為了要避免浮點數誤差），以下程式碼來達成（要求小數點後兩位，同時次方部分要求整數3位）：
+
 ```cpp=
 printf("%.2fe+%03lld\n",pow(10,ans),x);
 ```
+
 程式碼的部分，透過$edge$存完所有的取完 $\log$ 之後的邊，進行Dijkstra，輸出最短路徑（以科學記號表示）即可！
 
 ```cpp=
@@ -517,6 +533,7 @@ signed main(){
 ```
 
 ### E.漢米頓的麻煩
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1096)
 
 他題目時不時提到漢米頓，是多愛漢米頓XDD（這一題跟漢米頓根本沒關係）
@@ -581,6 +598,7 @@ signed main(){
 ```
 
 ### 旅遊規劃問題
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1028)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/262198)
 這一題 $n≤13$ 大概就是位元dp來完成（狀態壓縮），定義 $dp[i][j]$ 為現在在點i上，拜訪過點集j的最短距離（j中不包含點i）。這裡使用到了同層轉移的技巧，也就是利用j中的點，對相同狀態下不在i中的點進行更新。
@@ -669,6 +687,7 @@ signed main(){
 ```
 
 ### Codeforces 543B: Destroying Roads
+
 [題目連結](https://codeforces.com/problemset/problem/543/B)
 [Submission](https://codeforces.com/problemset/submission/543/125743532)
 
@@ -698,6 +717,7 @@ signed main(){
 {% endnote %}
 
 以下是AC程式碼：
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
@@ -759,7 +779,8 @@ int main(){
 }
 ```
 
-###  TIOJ 2180 勇者冒險 (Adventure)
+### TIOJ 2180 勇者冒險 (Adventure)
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/2180)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/262669)
 
@@ -833,11 +854,12 @@ signed main(){
 ```
 
 ### 最小花費的航空之旅
+
 > 題目敘述：
 > 給定很多種連接城市間的聯票，要求從起始站搭乘，可以在中途任意站下車，但下車以後就不能再次上車。輸入的第一行為一個正整數 n (1 ≤ n ≤ 20)，即聯票的種類數。以下 n 行每航為一個聯票的資訊，其中第一個整數為聯票的價格，然後是聯票上城市的數目。
-> 
+>
 > 接下來為一個行程單的資訊，其中第一個正整數為行程單上的城市數目k（包括起始城市，2 ≤ k ≤ 10），以及這些城市的編號（按順序列出）。
-> 
+>
 > 輸出最小花費和對應的方案的其中一組解。
 
 這一題是APCS Class的其中一題，難度頗高，因為他要找最短的路徑，同時增加了可以在任意站下車的條件。首先我們要維護每一個聯票的資訊，它的價值、起點、編號以及經過的城市。接著，我們考慮所有從起點出發的聯票，將每一種聯票上的每一個經過的城市都加入queue中。
@@ -856,9 +878,11 @@ struct cmp{
     }
 };
 ```
+
 {% endnote %}
 
 以下是AC Code：
+
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long
