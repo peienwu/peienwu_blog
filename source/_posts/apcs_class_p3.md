@@ -7,10 +7,13 @@ tags:
 categories: APCS檢定
 mathjax: true
 ---
+
+APCS Class題目第三部分！
+
 ## M. [基礎資料結構 II 及基礎演算法 II ] 貪婪法
 
 ### a071. 排隊買飲料
-
+<!--more-->
 ```cpp=
 #include <bits/stdc++.h>
 #define ll long long

@@ -1,6 +1,6 @@
 ---
 title: 2021.2.5 Codeforces Round #699 (Div.2)
-date: 2021-2-5
+date: 2021-1-30
 tags: 
     - CF
     - 競賽

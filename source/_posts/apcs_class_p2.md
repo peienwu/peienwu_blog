@@ -7,11 +7,12 @@ tags:
 categories: APCS檢定
 mathjax: true
 ---
+APCS Class題目第二部分！
 
 ## G. [基礎資料結構 I ] 堆疊、佇列
 
 ### a119. 括號問題
-
+<!--more-->
 ```cpp=
 #include <bits/stdc++.h>
 using namespace std;

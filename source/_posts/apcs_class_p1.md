@@ -13,7 +13,7 @@ mathjax: true
 ## A. [基礎程式設計] 基礎C++程式設計複習
 
 ### a064/ 成績指標
-
+<!--more-->
 ```cpp=
 #include <bits/stdc++.h>
 #define int long long
