@@ -228,14 +228,14 @@ int main(){
 
 ```
 DIJKSTRA(G, w, s)
-  1  INITIALIZE-SINGLE-SOURCE(G, s)
-  2    S <- Ø
-  3    Q <- V[G]
-  4    while Q ≠ Ø
-  5        do u <- EXTRACT-MIN(Q)
-  6            S <- S ∪ {u}
-  7            for each vertex v ∈ Adj[u]
-  8                do RELAX(u,v,w)
+    INITIALIZE-SINGLE-SOURCE(G, s)
+      S <- Ø
+      Q <- V[G]
+      while Q ≠ Ø
+          do u <- EXTRACT-MIN(Q)
+              S <- S ∪ {u}
+              for each vertex v ∈ Adj[u]
+                  do RELAX(u,v,w)
 ```
 
 ### Bellman-Ford：單點源最短路徑
@@ -255,14 +255,14 @@ DIJKSTRA(G, w, s)
 
 ```
 BELLMAN-FORD(G,w,s)
-  1    INITIALIZE-SINGLE-SOURCE(G,s)
-  2    for i <- 1 to |V[G]|-1
-  3        do for each edge (u,v)∈ E[G]
-  4            do RELAX(u,v,w)
-  5    for each edge (u,v)∈ E[G]
-  6        do if d[v] > d[u]+w(u,v)
-  7            then return FALSE
-  8    return TRUE
+      INITIALIZE-SINGLE-SOURCE(G,s)
+      for i <- 1 to |V[G]|-1
+          do for each edge (u,v)∈ E[G]
+              do RELAX(u,v,w)
+      for each edge (u,v)∈ E[G]
+          do if d[v] > d[u]+w(u,v)
+              then return FALSE
+      return TRUE
 ```
 
 ### 優化：SPFA(Shortest Path Faster Algorithm)
@@ -279,27 +279,27 @@ BELLMAN-FORD(G,w,s)
 
 ```
 Shortest-Path-Faster-Algorithm(G, s)
-  1    for each vertex v ≠ s in V(G)
-  2        d(v) := ∞
-  3    d(s) := 0
-  4    offer s into Q
-  5    while Q is not empty
-  6        u := poll Q
-  7        for each edge (u, v) in E(G)
-  8            if d(u) + w(u, v) < d(v) then
-  9                d(v) := d(u) + w(u, v)
- 10                if v is not in Q then
- 11                    offer v into Q
+      for each vertex v ≠ s in V(G)
+          d(v) := ∞
+      d(s) := 0
+      offer s into Q
+      while Q is not empty
+          u := poll Q
+          for each edge (u, v) in E(G)
+              if d(u) + w(u, v) < d(v) then
+                  d(v) := d(u) + w(u, v)
+                 if v is not in Q then
+                     offer v into Q
 ```
 
 ### DAG Shortest Path
 
-首先對所有點進行拓墣排序，花上時間 $O(V+E)$，接著對每一條邊進行鬆弛，時間$O(E)$，因此總時間複雜度是 $O(V+E)$。這個時間複雜度是很快的，但相對的限制也非常多，除了不能有負邊與負環之外，更不能有正環在其中，否則不能進行拓墣排序（在之前筆記[進階圖論（一）](/OYm7TyO2RquZwdUFLx8PFQ)）有提到，也就是這一中圖必須是DAG(Directed Acyclic Graph)！
+首先對所有點進行拓墣排序，花上時間 $O(V+E)$，接著對每一條邊進行鬆弛，時間$O(E)$，因此總時間複雜度是 $O(V+E)$。這個時間複雜度是很快的，但相對的限制也非常多，除了不能有負邊與負環之外，更不能有正環在其中，否則不能進行拓墣排序（在之前筆記進階圖論（一）有提到，也就是這一中圖必須是DAG(Directed Acyclic Graph)！
 
 一個有趣的應用：[PERT](https://zh.wikipedia.org/wiki/%E8%A8%88%E7%95%AB%E8%A9%95%E6%A0%B8%E8%A1%93)
 
 ## 延伸筆記
 
-[最短路徑問題](https://peienwu.com/2021/08/15/Shortest_Path/)
-[進階圖論(1)](https://hackmd.io/@peienwu/HJw8T-FF_)
-[最短路徑例題](https://peienwu.com/2021/08/16/Shortest_Path_problem/)
+* 最短路徑問題
+* 進階圖論（一）
+* 最短路徑例題
