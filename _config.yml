@@ -108,3 +108,8 @@ deploy:
   type: git
   repo: git@github.com:peienwu/peienwu_blog.git
   branch: gh-pages
+
+# 注意：yml 非常在意縮排。
+sitemap:
+  path: sitemap.xml
+  #template: ./sitemap_template.xml # 這行非必填，除非你想設定自訂的樣板
