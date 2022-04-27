@@ -1,5 +1,5 @@
 ---
-title: 計算幾何例題
+title: 計算幾何例題（Computational Geometry Problems）
 date: 2021-8-22
 tags: 
     - 計算幾何
@@ -11,6 +11,7 @@ mathjax: true
 ---
 
 ## 題目目錄
+
 - 向量加法
 - 等長線段對
 - 向左轉向右轉
@@ -30,6 +31,7 @@ mathjax: true
 - ZJ d269: 11579 - Triangle Trouble
 
 ### 向量加法
+
 [題目連結](https://neoj.sprout.tw/problem/398/)
 [Submission](https://neoj.sprout.tw/challenge/178462/)
 
@@ -84,6 +86,7 @@ signed main(){
 ```
 
 ### 等長線段對
+
 [題目連結](https://neoj.sprout.tw/problem/399/)
 [Submission](https://neoj.sprout.tw/challenge/178471/)
 > 題目敘述：
@@ -135,6 +138,7 @@ signed main(){
 ```
 
 ### 向左轉向右轉
+
 [題目連結](https://neoj.sprout.tw/problem/400/)
 [Submission](https://neoj.sprout.tw/challenge/178524/)
 
@@ -158,6 +162,7 @@ $$A\cdot B = |A||B|\cos\theta = A_xB_x+A_yB_y\\A\times B = |A||B|\sin\theta = A_
 **方向函數**
 
 當我們要判斷方向的時候，會利用正弦函數，逆時針正、順時針為負進行判斷！
+
 ```cpp=
 int dir(pt a, pt b, pt o) {
     int cross = (a - o) ^ (b - o);
@@ -166,6 +171,7 @@ int dir(pt a, pt b, pt o) {
     else return -1;
 }
 ```
+
 注意到此時在判斷是否為平行的時候（cross==0），使用到$fabs()$這個函數，目的是為了避免誤差而導致判斷錯誤，因此需要進行誤差的處理（其實不用也沒差啦，只是這樣嚴謹一點）
 {% endnote %}
 
@@ -235,11 +241,13 @@ signed main(){
 ```
 
 ### 線段相交
+
 [題目連結](https://neoj.sprout.tw/problem/401/)
 [Submission](https://neoj.sprout.tw/challenge/178537/)
 線段相交 = ~~線段香蕉~~，自動選字永遠都是香蕉，有點煩XDD
 
 如何判斷兩線段是否相交？首先需要一個函數可以判斷點是否在一個線段上，如此一來就可以判斷端點在另一條線段上的特殊情況。以下程式碼為判斷點$P_o$ 是否在 $\overline{P_aP_b}$ 上。利用向量外積可以判斷兩線段是否平行，而使用內積公式可以判斷$P_o$是否在線段中，而非線段的兩側！
+
 ```cpp=
 bool onseg(pt a, pt b, pt o){       //o是否在ab線段上
     int cross = (a - o) ^ (b - o);  //是否平行
@@ -247,9 +255,11 @@ bool onseg(pt a, pt b, pt o){       //o是否在ab線段上
     return (cross == 0)&&(dot <= 0);
 }
 ```
+
 說明：由點$P_o$指向a和b的向量必須呈現180度角（也就是異向），才可確保在ab線段中（跟a,b重合也算是跟ab線段相交）。
 
 接下來是主要的部分，首先先確認4個端點是否恰好在另外一條線段上，判斷完之後就是處理一般相交的情況。若線段 $\overline{P_1P_2}$ 與 $\overline{P_3P_4}$ 相交，則點 $P_1$ 與點 $P_2$ 會在線段$\overline{P_3P_4}$ 的異側。用方向函數表示：$dir(a,b,c)\times dir(a,b,d)<0$。確認完兩個線段之後即完成線段相交的判斷！
+
 ```cpp=
 bool Intersection(pt a, pt b, pt c, pt d){      //線段ab是否與cd相交
     if(onseg(a,b,c)||onseg(a,b,d))return true;  //點c、d是否洽在線段ab上
@@ -259,10 +269,12 @@ bool Intersection(pt a, pt b, pt c, pt d){      //線段ab是否與cd相交
     return false;
 }
 ```
+
 由下圖可以得到上面的結論，當兩線段相交時，方向函數得到的值（用外積，也就是下圖 $\theta_1$ 以及 $\theta_2$）的方向），會呈現一正一負，從兩個相反的方向看同一條線段得出來的結論！
 ![](https://i.imgur.com/b5pW6IS.png)
 
 AC Code:
+
 ```cpp=
 #include <bits/stdc++.h>
 #define Orz ios::sync_with_stdio(0),cin.tie(0)
@@ -337,7 +349,9 @@ signed main(){
     }
 }
 ```
+
 ### TIOJ 1178 Convex Hull
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1178)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/262532)
 
@@ -366,12 +380,14 @@ signed main(){
 {% note success %}
 **實作細節**
 以下是確認是否需要將vector中元素pop出來的關鍵，對向量$\stackrel\longrightarrow{OA}\times \stackrel\longrightarrow{OB}$ 做外積的結果，必須排除外積結果為0的情況，如果將0也納入，會造成一個點被push進去很多次，在數量和計算上出現問題。
+
 ```cpp=
 bool check(pt a,pt b,pt o){
     int cross = (a - o)^(b - o);
     return cross >= 0;         //這裡很關鍵，別吃WA
 }
 ```
+
 除此之外，上凸包在範圍限制上是需要注意的。假設x座標最大的點i，當在圍上凸包的過程中i是不可以被pop出去的，因此vector的大小必須大於下凸包的大小。
 
 凸包使用第i-1跟第i個點的向量去看第i到第i+1個點的向量，決定一個點要不要被推入vector中。當我們逆序從x座標最大的點往前看時，要確保每一輪結束之後在i點後都必須要有至少一個點，設定hull.size() > down_hull的原因是防止在下凸包的點被圍上凸包的過程更新到。
@@ -386,6 +402,7 @@ for(auto i: p){
     hull.push_back(i);
 }
 ```
+
 {% endnote %}
 以下是AC Code:
 
@@ -467,7 +484,9 @@ signed main(){
     cout<<hull.size()-1<<endl;
 }
 ```
+
 ### 最小凸多邊形
+
 [題目連結](https://neoj.sprout.tw/problem/402/)
 [Submission](https://neoj.sprout.tw/challenge/178589/)
 
@@ -566,7 +585,8 @@ signed main(){
 }
 ```
 
-### 來吧，遊戲開始了。
+### 來吧，遊戲開始了
+
 [題目連結](https://neoj.sprout.tw/problem/790/)
 [Submission](https://neoj.sprout.tw/challenge/178691/)
 [GGB模擬](https://www.geogebra.org/graphing/h4fxdquw)
@@ -605,6 +625,7 @@ signed main(){
 {% endnote %}
 
 以下是AC Code：
+
 ```cpp=
 #include <bits/stdc++.h>
 #define Orz ios::sync_with_stdio(0),cin.tie(0)
@@ -687,6 +708,7 @@ signed main(){
 ```
 
 ### 遊戲：最終回
+
 [題目連結](https://neoj.sprout.tw/problem/792/)
 [Submission](https://neoj.sprout.tw/challenge/178786/)
 > 題目敘述
@@ -695,7 +717,6 @@ signed main(){
 這邊有一個不嚴謹的推導方式，不過他是正確的。令多邊形內部格線長度為S，多邊形的邊落在的格線長度為T，多邊形面積T，則有以下關係式：
 
 $$S = 2A-\frac{T}{2}$$
-
 
 詳細的公式推導可以可以參閱下圖，平行四邊形（斜線部分）內部**垂直**的格線長度為： 大矩形 $(x_1+x_2)(y_1+y_2)$ 扣掉左右上下共四個三角形兩兩拼成一個矩形 $x_1y_1$ 以及 $x_2y_2$，還有左上右下兩個正方形 $2x_2y_1$，整理之後會發現其實跟面積是一樣的。對於垂直部分也是類似的情況。
 
@@ -708,6 +729,7 @@ $$S = 2A-\frac{T}{2}$$
 ![](https://i.imgur.com/Fy1wSky.png)
 
 以下是AC Code：
+
 ```cpp=
 #include <bits/stdc++.h>
 #define Orz ios::sync_with_stdio(0),cin.tie(0)
@@ -774,8 +796,8 @@ signed main(){
 }
 ```
 
-
 ### TIOJ 1205 直角三角形
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1205)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/262842)
 
@@ -790,6 +812,7 @@ signed main(){
 **實作小細節**
 
 雙指針進行枚舉的過程中，很有可能會指標指向的索引值會超出範圍。解決的方法有兩種：
+
 1. 超出了即代表繞了一圈，只需要對索引值取餘數即可。
 2. 除了取餘數的方法之外，其實也可以直接在點集後面將所有點再推入一次，讓角度從360延伸成720度，就不會有超出範圍的問題！
 {% endnote %}
@@ -893,8 +916,8 @@ signed main(){
 }
 ```
 
-
 ### TIOJ 1105 H.PS3
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1105)
 [Submission $O(n^2)$](https://tioj.ck.tp.edu.tw/submissions/262930)
 [Submission $O(n\log n)$](https://tioj.ck.tp.edu.tw/submissions/262947)
@@ -917,7 +940,6 @@ $$AREA = |\overrightarrow{AB}\times \overrightarrow{AC}|$$
 簡單來說，最遠點對一定會發生對角的凸包點上面，即使現在以 $\overline{HM}$ 為底最遠點並非 $J$ 而是 $D$ ，但在旋轉卡尺旋轉到 $\overline{FH}$ 時就能將距離更新成 $\overline{HD}$ 的距離。
 
 ![](https://i.imgur.com/6Jeg2U8.png)
-
 
 {% note success %}
 **實作小細節**
@@ -1061,9 +1083,9 @@ signed main(){
 ```
 
 ### ZJ b288: 夏季大三角
+
 [題目連結](https://zerojudge.tw/ShowProblem?problemid=b288)
 [解題報告](https://zerojudge.tw/ShowThread?postid=26741&reply=0)
-
 
 > 題目敘述
 請輸出在N個二維平面的座標，挑選3顆出來成組成三角形的最大面積
@@ -1076,8 +1098,8 @@ signed main(){
 
 ![](https://i.imgur.com/SUwVRWv.png)
 
-
 以下是AC Code：
+
 ```cpp=
 #include <bits/stdc++.h>
 #define Orz ios::sync_with_stdio(0),cin.tie(0)
@@ -1184,6 +1206,7 @@ signed main(){
 ```
 
 ### TIOJ 1500 Clean up on aisle 3
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1500)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/262966)
 > 題目敘述
@@ -1237,6 +1260,7 @@ signed main(){
 ```
 
 ### TIOJ 1280 領土 (Territory)
+
 [題目連結](https://tioj.ck.tp.edu.tw/problems/1280)
 [Submission](https://tioj.ck.tp.edu.tw/submissions/262848)
 
@@ -1244,7 +1268,6 @@ signed main(){
 一個國家有 n 個安全哨，每一個都有座標 $(x,y)$ ，代表在座標軸上的位置。輸出該國安全哨所能圍出的最大領土。
 
 n個點所能圍成的最大面積，其實等價於凸包的面積。與前幾題的**最小凸多邊形**是一模一樣的題目！
-
 
 ```cpp=
 #include <bits/stdc++.h>
@@ -1332,6 +1355,7 @@ signed main(){
 ```
 
 ### ZJ a871: Museum Area
+
 [題目連結](https://zerojudge.tw/ShowProblem?problemid=a871)
 
 > 題目敘述
@@ -1374,6 +1398,7 @@ signed main(){
 ```
 
 ### TIOJ 1678 剪多邊形（molding）
+
 [題目連結TIOJ](https://tioj.ck.tp.edu.tw/problems/1678)
 [TIOJ Submission](https://tioj.ck.tp.edu.tw/submissions/262849)
 [題目連結ZJ](https://zerojudge.tw/ShowProblem?problemid=d546)
@@ -1478,6 +1503,7 @@ signed main(){
 ```
 
 ### ZJ d269: 11579 - Triangle Trouble
+
 [題目連結](https://zerojudge.tw/ShowProblem?problemid=d269)
 
 > 題目敘述
@@ -1505,6 +1531,7 @@ $$\triangle ABC = \sqrt{s\cdot(s-a)\cdot(s-b)\cdot(s-c)} ≤ \sqrt{\frac{3a}{2}\
 {% endnote %}
 
 以下是使用貪婪法的AC Code：
+
 ```cpp=
 #include <bits/stdc++.h>
 #define Orz ios::sync_with_stdio(0),cin.tie(0)

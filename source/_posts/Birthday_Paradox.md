@@ -18,7 +18,7 @@ mathjax: true
 
 答案是<font color="#f00">23</font>人。
 <!-- more -->
-如果想要看[1到100人有同一天的機率可以點這裡](https://gist.github.com/peienwu/bd6edf34416f352ba97b94c67d5acb52)
+如果想要看1到100人有同一天的機率可以[點這裡！](https://gist.github.com/peienwu/bd6edf34416f352ba97b94c67d5acb52)
 
 ## 機率與人數的關係
 
@@ -36,7 +36,7 @@ mathjax: true
 有了以上兩個關係式，就可以進行圖表的繪製。x軸表示人數，y軸表示機率，可以看出來兩種理解方式會造成機率有很大的差別！
 ![](https://i.imgur.com/NcIRKE7.png)
 
-畫圖程式碼：
+上圖繪製程式碼：
 
 ```python=
 import numpy as np
@@ -165,7 +165,7 @@ int main(){
 
 對於房間裡有n人的情況，定義 $p(n)$ 為「至少兩人生日相同的機率」、$p'(n)$ 為「沒有人生日相同的機率」，在不考慮特殊強況（閏年等），並假設生日會平均分佈的狀況下：
 $$\begin{split}p(n)&=1-p'(n) \\&= 1-(1\times\frac{364}{365}\times\frac{363}{365}\times\cdots\frac{365-(n-1)}{365})\\\\&=1-\frac{365!}{365^n\cdot(365-n)!}\end{split}$$
-簡單解釋一下，對於每一個加入房間的人都有365種可能，因此分母皆為365；對於第i個加入的人要避開前i-1個人的生日，因此分子為365-(i-1)。經過整理可以得到這個有階乘又有次方的很難看的一個公式！:neutral_face:
+簡單解釋一下，對於每一個加入房間的人都有$365$種可能，因此分母皆為$365$；對於第 $i$ 個加入的人要避開前 $i-1$ 個人的生日，因此分子為$365-(i-1)$。經過整理可以得到這個有階乘又有次方的很難看的一個公式！
 
 這時候我們可以引入泰勒公式：
 $$\begin{split}e^x&=\sum_{k=0}^\infty\frac{x^k}{k!}=1+\frac{x^1}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}\cdots\end{split}$$
@@ -309,7 +309,7 @@ $$Q(H)\cong\sqrt{\frac{\pi}{2}H}$$
 
 ## 附錄
 
-### 一些數學證明
+一些數學證明：
 
 ![](<https://i.imgur.com/eKXfAI7.jpg> =400x)
 

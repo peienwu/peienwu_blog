@@ -1,5 +1,5 @@
 ---
-title: 線段樹例題(Segment Tree)
+title: 線段樹例題（Segment Tree）
 date: 2021-8-6
 tags: 
     - 2020資訊之芽

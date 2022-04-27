@@ -1,5 +1,5 @@
 ---
-title: 線段樹(Segment Tree)
+title: 線段樹（Segment Tree）
 date: 2021-8-5
 tags: 
     - 2020資訊之芽

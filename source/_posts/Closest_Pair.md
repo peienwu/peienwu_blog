@@ -19,7 +19,7 @@ mathjax: true
 
 ## 暴力枚舉
 
-### 時間複雜度：$N^2$
+### 時間複雜度：$O(N^2)$
 
 [Submission](https://tioj.ck.tp.edu.tw/submissions/262968)
 **時間：TLE,10440**
@@ -426,5 +426,5 @@ signed main(){
 
 ## 相關題目
 
-- [ ] [NEOJ 最近點對](https://neoj.sprout.tw/problem/795/)
-- [ ] [TIOJ 最遠點對](https://tioj.ck.tp.edu.tw/problems/1105)
+- [NEOJ 最近點對](https://neoj.sprout.tw/problem/795/)
+- [TIOJ 最遠點對](https://tioj.ck.tp.edu.tw/problems/1105)
