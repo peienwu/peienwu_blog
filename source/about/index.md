@@ -16,4 +16,4 @@ date: 2021-08-25 15:25:20
 * [ZeroJudge](https://zerojudge.tw/UserStatistic?id=128355)
 * [TIOJ](https://tioj.ck.tp.edu.tw/users/peienwu)
 * [NEOJ](https://neoj.sprout.tw/profile/2631/)
-* [都沒在打的CF](https://codeforces.com/profile/peienwu)
+* [CF](https://codeforces.com/profile/peienwu)
