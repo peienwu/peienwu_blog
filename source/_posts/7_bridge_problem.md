@@ -300,5 +300,6 @@ Shortest-Path-Faster-Algorithm(G, s)
 
 ## 延伸筆記
 
-* [最短路徑問題](https://peienwu.com/string/)
-* [最短路徑例題](https://peienwu.com/shortest_Path_problem/)
+* 最短路徑問題
+* 進階圖論（一）
+* 最短路徑例題
