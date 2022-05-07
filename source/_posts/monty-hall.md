@@ -9,6 +9,8 @@ categories:
 mathjax: true
 ---
 
+**三門問題**，或**蒙提霍爾問題**是一個違反直覺的條件機率問題，本文將從不同角度切入，探討不同選擇的機率大小。
+
 ## 問題敘述
 
 [資料來源](https://highscope.ch.ntu.edu.tw/wordpress/?p=47158)

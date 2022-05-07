@@ -7,7 +7,7 @@ tags:
 categories: 其他
 mathjax: true
 ---
-
+本網頁就是利用github page架設的部落格，使用Hexo搭配Next主題。
 暑假常常寫題，都幾乎紀錄在Hackmd上，如果能有屬於自己的部落格、用自己的網址，感覺超酷！來自己架設一個試試看！
 
 ## 網域種類
