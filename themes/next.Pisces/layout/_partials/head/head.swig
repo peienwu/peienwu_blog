@@ -1,4 +1,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9921797637924269"
+     crossorigin="anonymous"></script>
+     
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-205940898-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -7,9 +10,6 @@
 
   gtag('config', 'UA-205940898-1');
 </script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9921797637924269"
-     crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
