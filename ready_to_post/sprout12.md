@@ -6,6 +6,7 @@ tags:
     - 隨機
 categories: 資訊之芽筆記
 mathjax: true
+#password: sprout2022
 ---
 
 ## 上課內容
