@@ -664,6 +664,15 @@ add_this_id:
 # See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
 # ---------------------------------------------------------------
 
+# Google AdSense
+google_adsense:
+  enable: true
+  google_ad_client_id: ca-pub-9921797637924269
+  enable_page_level_ads: true
+  ## siderbar_enable 這邊建立廣告後才會用到
+  #siderbar_enable: true # 是否開啟側邊欄廣告
+  #siderbar_data_ad_slot: 0000000 # 請輸入廣告 slot
+
 # Google Analytics
 google_analytics:
   tracking_id: UA-205940898-1
