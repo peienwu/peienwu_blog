@@ -6,9 +6,9 @@ date: 2021-08-25 15:25:20
 ## 基本資料
 
 * 學習C++與演算法
-* 這個網站用來記錄技術性文章及程式相關筆記
+* 這個網站用來記錄程式學習以及數學相關筆記
 * Handle: @peienwu
-* 一些筆記的[連結](https://hackmd.io/@peienwu)
+* [Slides.com](http://slides.com/peienwu1216/deck)
 
 ## Judge 的 Handle
 
