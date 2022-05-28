@@ -6,7 +6,7 @@ date: 2021-08-25 15:25:20
 ## 基本資料
 
 * 學習C++與演算法
-* 這個網站用來記錄程式學習以及數學相關筆記
+* 這個網站用來記錄程式及數學相關知識
 * Handle: @peienwu
 * [Slides.com](http://slides.com/peienwu1216/deck)
 
