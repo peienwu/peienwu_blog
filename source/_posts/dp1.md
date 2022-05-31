@@ -114,8 +114,7 @@ public:
 
 ### 分數背包
 
-策略：貪心法。每一次取單位價值最高的物品，優先放進背包。
-總是用當下最好的物品填滿背包空隙，最後沒有留下任何空隙。每一份背包空間，都是最有價值的物品，就算是交換物品也無法增加總價值 ── 顯然是最佳解。
+策略：貪心法。每一次取單位價值最高的物品，優先放進背包。放到沒有空隙為止，就會是最佳解了！
 時間複雜度：$O(n)$，n為物品數量
 
 ### 01背包問題
@@ -207,7 +206,9 @@ int main(){
 }
 ```
 
-時間複雜度 ***O(NW)*** ，空間複雜度 ***O(W)*** 。其中 N 是物品數量， W 是背包重量限制。（上方11-15行）
+**時間複雜度：O(NW)**
+**空間複雜度 O(W)**
+物品數量為N， W 是背包重量限制。（上方11-15行）
 
 **解四**：用價值作為狀態，dp紀錄重量的最小值。
 
@@ -240,7 +241,9 @@ signed main(){
 }
 ```
 
-時間複雜度 ***O(NV)*** ，空間複雜度 ***O(V)*** 。其中 N 是物品數量， V是價值總和。（上方11-15行）
+時間複雜度：O(NV)
+空間複雜度：O(V)
+物品數量為N，價值總和為V。（上方11-15行）
 
 細節注意：
 {% note success %}
@@ -328,7 +331,7 @@ $f(n,m) = max(f(n-1,m),f(n-1,m-w_n)+v_n)$
 
 ### 無限背包
 
-物品有許多種類，每一種物品都無限量供應的背包問題。
+對於背包裝的每一個物品有無限多個的背包問題。
 演算法：跟解三差不多，因為物品有**無限多個**，所以第二個迴圈要從 *weight[i]* 開始執行：
 
 ```cpp=
@@ -351,7 +354,7 @@ int main(){
 }
 ```
 
-## 找零錢問題
+## 找錢問題
 
 找零錢問題總共有以下幾種：
 
@@ -580,7 +583,7 @@ int main(){
 $$dp[i][j] = dp[i-1][j-1]+1, if\ s1[i-1]=s2[j-1]$$$$dp[i][j] = max(dp[i-1][j],dp[i][j-1]), if\ s1[i-1]!=s2[j-1]$$
 推導過程可以看：[資芽講義](https://www.csie.ntu.edu.tw/~sprout/algo2016/ppt_pdf/dynamic_programming_2.pdf)
 
-以 leetcode [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)為例：
+下面是以leetcode[leetcode 1143.: Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)為範例：
 
 ```cpp=
 class Solution {

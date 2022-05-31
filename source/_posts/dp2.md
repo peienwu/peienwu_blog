@@ -307,8 +307,6 @@ public:
 
 這一題有一個數學解，可以保證答案一定是true。
 
-> We can extend this idea to N piles. Say the first, third, fifth, seventh, etc. piles are white, and the second, fourth, sixth, eighth, etc. piles are black. Alex can always take either all white piles or all black piles, and one of the colors must have a sum number of stones larger than the other color.
-
 簡單來說，alex可以控制對方拿到的一定是白色堆或是黑色堆，因此只要在一開始選擇數量較大的顏色就保證可以贏得遊戲
 {% endnote %}
 
