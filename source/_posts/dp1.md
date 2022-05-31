@@ -33,8 +33,6 @@ mathjax: true
 
 ## [IOI 1994] 三角旅行
 
-![](https://i.imgur.com/O8lT7c9.png)
-
 ### 0.定義
 
 定義陣列dp[i][j]為走到第 i 橫排第 j 格的時候可能的最大值。
@@ -211,7 +209,7 @@ int main(){
 
 時間複雜度 ***O(NW)*** ，空間複雜度 ***O(W)*** 。其中 N 是物品數量， W 是背包重量限制。（上方11-15行）
 
-**解四**：用價值作為狀態，dp紀錄重量的最小值，可以看[這裡](https://hackmd.io/P28wmXFHQ_-yZuEFQnfVuA)
+**解四**：用價值作為狀態，dp紀錄重量的最小值。
 
 ```cpp=
 #include <bits/stdc++.h>
@@ -323,10 +321,8 @@ int main(){
 01背包問題在壓成一維的過程中必須知道是怎麼來的，從二維壓成一維，dp更新的順序要從前到後或後到前要看是存取到哪一格的內容。
 這是**01背包問題**轉移式所用到的格子：
 $f(n,m) = max(f(n-1,m),f(n-1,m-w_n)+v_n)$
-![](https://i.imgur.com/zavoNSH.png)
 對於每一個f(n,m)只會取用到2個格子$f(n-1,m)$和$f(n-1,m-w_n)$兩個格子，如果從前到後更新格子的話，左上方的藍色格子會先被更新到，所以改成一維陣列之後必須要從後往前更新
 接下來是**無限背包問題**：
-![](https://i.imgur.com/Io9scMn.png)
 左邊的藍色格子是被更新後的，因此無限背包問題必須從前到後更新
 {% endnote %}
 
@@ -726,6 +722,7 @@ void print(int i,int j){
 
 [學長講yee](https://slides.com/justinlai2003/dq-dp#/6)
 <https://leetcode.com/tag/dynamic-programming/>
+
 * [x] <https://tioj.ck.tp.edu.tw/problems/1354>
 * [x] <https://tioj.ck.tp.edu.tw/problems/1019>
 * [ ] <https://codeforces.com/problemset/problem/1207/C>

@@ -222,7 +222,7 @@ vector<int> KMP_match(char *S,int *F,char *T){
 
 雜湊算法的核心概念就是以下公式，可以透過它進行字串比對等等。
 $$H(s[1:n]) = \sum_{i=0}^n S_i\times C^{n-i}$$
-詳細內容可以參閱這一篇：[隨機演算法](https://hackmd.io/@peienwu/random)
+詳細內容可以參閱這一篇：[隨機演算法](https://peienwu.com/sprout9/)
 
 ### Z Algorithm (Gusfield's Algorithm)
 

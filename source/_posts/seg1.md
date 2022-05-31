@@ -175,7 +175,7 @@ RMQ = Range minimun query，也就是詢問一個區間的最小值。分析一�
 <br>
 
 **2. 分塊算法**
-可以參見 [這篇文章](https://hackmd.io/@peienwu/rkCDKEcjd)
+可以參見 [這篇文章](https://peienwu.com/sprout9/)
 
 **3. 線段樹**
 時間複雜度：<font color="#f00">預處理 $O(n)$、詢問$O(logn)$</font>
@@ -188,7 +188,6 @@ RMQ = Range minimun query，也就是詢問一個區間的最小值。分析一�
 
 **4. 稀疏表(Sparse Table)**
 時間複雜度：<font color="#f00">預處理 $O(nlogn)$、詢問$O(1)$</font>
-參考 [這篇文章](https://hackmd.io/@peienwu/H1W1Y18Gt)
 {% endnote %}
 
 這一題就是基礎的要有支援區間查詢、單點修改的線段樹，也是最簡單的一種！

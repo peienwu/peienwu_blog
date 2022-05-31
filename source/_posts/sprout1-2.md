@@ -903,7 +903,7 @@ int main(){
 ## 手寫作業
 
 這一週的手寫作業是介紹c++ 的記憶體使用方式，什麼變數應該會被存在什麼位置之類的，heap 與stack 還有虛擬記憶體，以及為什麼有時候寫dfs遞迴下去會RE的問題（我是還沒有遇過啦）
-![](https://i.imgur.com/mFgJxBF.png)
+
 總之終於沒有數學證明題了！
 
 ---
@@ -923,7 +923,7 @@ int main(){
 
 [題目連結](https://neoj.sprout.tw/problem/62/)
 首先是數獨，很有趣，之前有做過類似的是**八皇后問題**
-用到**DFS剪枝**，[筆記在這](https://peienwu.com/2021/03/07/Sudoku/)
+用到**DFS剪枝**，[筆記在這](https://peienwu.com/sudoku/)
 
 ```cpp=
 #include <bits/stdc++.h>
@@ -1042,9 +1042,7 @@ int main(){
 
 [題目連結](https://neoj.sprout.tw/problem/63/)
 這一題主要就是建立一個排列樹，把每一種可能的情況用遞迴列出來
-![](https://i.imgur.com/cKGOtgP.png)
-這一題用DFS明顯比BFS來得好、**空間**省很多（用一下資芽的圖XD)
-![](https://i.imgur.com/sOjMiuk.png)
+這一題用DFS明顯比BFS來得好、**空間**省很多
 
 來看程式碼吧！
 
