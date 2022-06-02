@@ -11,16 +11,10 @@ mathjax: true
 
 ## 問題描述
 
-對於婚姻匹配問題有以下描述。
-
-> Given n men and n women, where each person has ranked all members of the opposite sex in order of preference, marry the men and women together such that there are no two people of opposite sex who would both rather have each other than their current partners.
->
-> When there are no such pairs of people, the set of marriages is deemed stable.
-<!--more-->
-在所有婚姻狀態均「穩定」的已婚社群，每對婚姻中的男、女，各自都無法找到更心儀的、喜歡他、她甚於喜歡自己配偶的對象。換句話說，男人即使心中有他認為比太太更好的女人，這女人也不會認為他比自己的先生好。同樣地，女人心中即使有她認為比先生更好的男人，這男人也不會認為她比自己的太太好。
+對於婚姻匹配問題有以下描述：對於一個群體來說，男生女生都要尋找自己最心儀的對象。而一個「穩定」的群體我們把他定義為在婚姻中的每一對男女都沒有比目前的配對方式更好的組合。
 
 下圖為四男（小寫字母）以及四女（大寫字母）對異性的偏好順序，第一格代表男生對女生的偏好順序，第二格則代表女生對男生的偏好順序。
-
+<!--more-->
 |     |  A  |  B  |  C  |  D  |
 | :---: |:---:|:---:|:---:|:---:|
 | a   | 1,3 | 2,3 | 3,2 | 4,3 |

@@ -7,7 +7,7 @@ tags:
     - DP
 categories: 資訊之芽筆記
 mathjax: true
-#password: sprout2022
+password: sprout2022
 ---
 
 這兩週真是風風雨雨，首先第一週是段考週，所以有很多時間拿去惡補段考。第二週則是疫情關係要在家裡線上上課，結果進度就辣了一大截...趕快追QQ！
