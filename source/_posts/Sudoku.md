@@ -14,7 +14,7 @@ mathjax: true
 
 資訊之芽的上課內容，用了幾節下課加回家的時間把程式實作出來
 用紙跟筆解數獨的過程就是把所有可能剔除明顯不可能的之後下去試，如果遇到問題就換下一種方式
-
+![](https://i.imgur.com/WrGCOnx.png)
 <!--more-->
 用程式模擬也是一樣的概念，先把明顯不可能的情況剔除，接下來就一一透過DFS搜尋下去，如果碰壁就回朔回來
 [NEOJ](https://neoj.sprout.tw/problem/62/)、[TIOJ](https://tioj.ck.tp.edu.tw/problems/1025)（他的範測給得不是很好閱讀XD
@@ -209,7 +209,9 @@ void Sudoku::dfs(int row, int col ){
 ## 相關延伸：八皇后問題
 
 [題目連結](https://leetcode.com/problems/n-queens-ii/)
-這一份程式碼是leetcode八皇后問題的解。透過遞迴可以找出每一組解。
+這一份程式碼是leetcode八皇后問題的解。像下面這一張圖就是一組合法的解，透過遞迴可以找出每一組解。
+
+![](https://i.imgur.com/gEH8Zyo.png)
 
 網路上的資料指出這是一個$NP-Complete$的問題，表示並沒有多項式時間的解法。透過2個簡單的函數（是否可行、遞迴函數）即可實作出來。以下表格給出n為1到11的合法解個數：
 

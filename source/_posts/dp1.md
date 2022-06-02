@@ -33,6 +33,8 @@ mathjax: true
 
 ## [IOI 1994] 三角旅行
 
+![](https://i.imgur.com/O8lT7c9.png)
+
 ### 0.定義
 
 定義陣列dp[i][j]為走到第 i 橫排第 j 格的時候可能的最大值。
@@ -114,7 +116,8 @@ public:
 
 ### 分數背包
 
-策略：貪心法。每一次取單位價值最高的物品，優先放進背包。放到沒有空隙為止，就會是最佳解了！
+策略：貪心法。每一次取單位價值最高的物品，優先放進背包。
+總是用當下最好的物品填滿背包空隙，最後沒有留下任何空隙。每一份背包空間，都是最有價值的物品，就算是交換物品也無法增加總價值 ── 顯然是最佳解。
 時間複雜度：$O(n)$，n為物品數量
 
 ### 01背包問題
@@ -206,11 +209,9 @@ int main(){
 }
 ```
 
-**時間複雜度：O(NW)**
-**空間複雜度 O(W)**
-物品數量為N， W 是背包重量限制。（上方11-15行）
+時間複雜度 ***O(NW)*** ，空間複雜度 ***O(W)*** 。其中 N 是物品數量， W 是背包重量限制。（上方11-15行）
 
-**解四**：用價值作為狀態，dp紀錄重量的最小值。
+**解四**：用價值作為狀態，dp紀錄重量的最小值，可以看[這裡](https://hackmd.io/P28wmXFHQ_-yZuEFQnfVuA)
 
 ```cpp=
 #include <bits/stdc++.h>
@@ -241,9 +242,7 @@ signed main(){
 }
 ```
 
-時間複雜度：O(NV)
-空間複雜度：O(V)
-物品數量為N，價值總和為V。（上方11-15行）
+時間複雜度 ***O(NV)*** ，空間複雜度 ***O(V)*** 。其中 N 是物品數量， V是價值總和。（上方11-15行）
 
 細節注意：
 {% note success %}
@@ -324,14 +323,16 @@ int main(){
 01背包問題在壓成一維的過程中必須知道是怎麼來的，從二維壓成一維，dp更新的順序要從前到後或後到前要看是存取到哪一格的內容。
 這是**01背包問題**轉移式所用到的格子：
 $f(n,m) = max(f(n-1,m),f(n-1,m-w_n)+v_n)$
+![](https://i.imgur.com/zavoNSH.png)
 對於每一個f(n,m)只會取用到2個格子$f(n-1,m)$和$f(n-1,m-w_n)$兩個格子，如果從前到後更新格子的話，左上方的藍色格子會先被更新到，所以改成一維陣列之後必須要從後往前更新
 接下來是**無限背包問題**：
+![](https://i.imgur.com/Io9scMn.png)
 左邊的藍色格子是被更新後的，因此無限背包問題必須從前到後更新
 {% endnote %}
 
 ### 無限背包
 
-對於背包裝的每一個物品有無限多個的背包問題。
+物品有許多種類，每一種物品都無限量供應的背包問題。
 演算法：跟解三差不多，因為物品有**無限多個**，所以第二個迴圈要從 *weight[i]* 開始執行：
 
 ```cpp=
@@ -354,7 +355,7 @@ int main(){
 }
 ```
 
-## 找錢問題
+## 找零錢問題
 
 找零錢問題總共有以下幾種：
 
@@ -583,7 +584,7 @@ int main(){
 $$dp[i][j] = dp[i-1][j-1]+1, if\ s1[i-1]=s2[j-1]$$$$dp[i][j] = max(dp[i-1][j],dp[i][j-1]), if\ s1[i-1]!=s2[j-1]$$
 推導過程可以看：[資芽講義](https://www.csie.ntu.edu.tw/~sprout/algo2016/ppt_pdf/dynamic_programming_2.pdf)
 
-下面是以leetcode[leetcode 1143.: Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)為範例：
+以 leetcode [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)為例：
 
 ```cpp=
 class Solution {
@@ -725,7 +726,6 @@ void print(int i,int j){
 
 [學長講yee](https://slides.com/justinlai2003/dq-dp#/6)
 <https://leetcode.com/tag/dynamic-programming/>
-
 * [x] <https://tioj.ck.tp.edu.tw/problems/1354>
 * [x] <https://tioj.ck.tp.edu.tw/problems/1019>
 * [ ] <https://codeforces.com/problemset/problem/1207/C>
