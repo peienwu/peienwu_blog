@@ -8,7 +8,7 @@ categories:
     - C++進階主題
     - 最短路徑
 mathjax: true
-password: sprout2022
+#password: sprout2022
 ---
 
 ## 題目目錄
