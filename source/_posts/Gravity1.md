@@ -99,7 +99,7 @@ $$F = \frac{GMm}{r^2} = ma_c = m\frac{v^2}{r}$$
 若近日點距為$r_1$、遠日點距為$r_2$，半軸長$a = \frac{r_1+r_2}{2}$，根據遠日點以及近日點的力學能守恆以及克卜勒第二定律，可以列出以下兩式：
 
 $$\begin{aligned}\frac{1}{2}mv_1^2 - \frac{GMm}{r_1} &= \frac{1}{2}mv_2^2 - \frac{GMm}{r_2}\\\\
-\frac{\pi ab}{T} = r_1v_1 &= r_2v_2\end{aligned}$$
+\frac{\pi ab}{T} = \frac{1}{2}r_1v_1 &= \frac{1}{2}r_2v_2\end{aligned}$$
 
 將二式帶入一式可得：
 
