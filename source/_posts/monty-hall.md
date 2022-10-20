@@ -1,6 +1,7 @@
 ---
 title: 三門問題（Monty Hall Problem）
 date: 2021-7-2
+sticky: 94
 tags: 
     - 數學
     - 2021暑期筆記

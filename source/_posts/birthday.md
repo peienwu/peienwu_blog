@@ -1,6 +1,7 @@
 ---
 title: 生日問題（Birthday Paradox）
 date: 2021-7-5
+sticky: 92
 tags: 
     - 數學
     - 2021暑期筆記

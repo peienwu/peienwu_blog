@@ -1,6 +1,7 @@
 ---
 title: 使用Hexo搭配GitHub架設個人部落格
 date: 2021-8-27
+sticky: 95
 tags: 
     - 個人部落格
     - 網站架設

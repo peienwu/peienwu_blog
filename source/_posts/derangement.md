@@ -1,6 +1,7 @@
 ---
 title: 錯排問題（Derangements）
 date: 2021-7-10
+sticky: 97
 tags: 
     - 數學
     - 2021暑假筆記
