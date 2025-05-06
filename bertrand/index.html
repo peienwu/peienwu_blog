@@ -50,7 +50,7 @@
 <meta property="og:image" content="https://i.imgur.com/riz3ZQn.png">
 <meta property="og:image" content="https://i.imgur.com/5M2cLna.png">
 <meta property="article:published_time" content="2022-02-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-06T03:43:47.385Z">
+<meta property="article:modified_time" content="2025-05-06T04:25:25.504Z">
 <meta property="article:author" content="peienwu">
 <meta property="article:tag" content="數學">
 <meta property="article:tag" content="機率">
@@ -283,7 +283,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">文章字數：</span>
-              <span>1.3k</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="所需閱讀時間">
               <span class="post-meta-item-icon">
@@ -307,11 +307,14 @@
 <h2 id="產生弦的不同方法"><a href="#產生弦的不同方法" class="headerlink" title="產生弦的不同方法"></a>產生弦的不同方法</h2><h3 id="方法1：隨機端點"><a href="#方法1：隨機端點" class="headerlink" title="方法1：隨機端點"></a>方法1：隨機端點</h3><p>這是最直覺產生弦的方法，隨機選擇圓上的兩個點連成一條弦。如下圖，不失一般性假設其中一個點是$A$，則另外一個點可能落在$A1,A2,A3$的弦上。若要產生大於三角形邊長的弦，則必須落在$A3$上，其機率為$\frac{1}{3}$。</p>
 <p><img src="https://i.imgur.com/VY5lu3v.png" alt=""></p>
 <p>以下影片為模擬隨機產生弦的狀況，弦長度大於 $T$ 機率約為$0.33$左右。</p>
-<video src="<iframe width="560" height="315" src="https://www.youtube.com/embed/dJB3xVKWavI" frameborder="0" allowfullscreen></iframe>" preload="metadata" controls playsinline poster="">Sorry, your browser does not support the video tag.</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dJB3xVKWavI" frameborder="0" allowfullscreen></iframe>
+
+
 <p>將產生的弦描繪出來如下圖：<br><img src="https://i.imgur.com/gbpWKKe.png" alt="drawing" width="300"/></p>
 <h3 id="方法2：隨機半徑"><a href="#方法2：隨機半徑" class="headerlink" title="方法2：隨機半徑"></a>方法2：隨機半徑</h3><p>此作法是隨機產生一條半徑，假設其與圓周交於$A$，接著隨機在半徑上找一點，做出過此點且與半徑垂直的弦。我們可以發現，當點的位置下圖綠色線段上時，弦的長度大於 $T$，在黃色線段時則小於 $T$。<br><img src="https://i.imgur.com/RZ97qY7.png" alt=""></p>
 <p>黃色與綠色線段長度相等，因此產生大於 $T$ 的弦長機率為$\frac{1}{2}$，約莫$0.5$左右。</p>
-<video src="<iframe width="560" height="315" src="https://www.youtube.com/embed/sH-0lX4h1lw" frameborder="0" allowfullscreen></iframe>" preload="metadata" controls playsinline poster="">Sorry, your browser does not support the video tag.</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sH-0lX4h1lw" frameborder="0" allowfullscreen></iframe>
+
 <p>@@ 方法3：隨機中點</p>
 <p>將產生的弦描繪出來如下圖：</p>
 <p><img src="https://i.imgur.com/UGawzWw.png" alt="drawing" width="300"/></p>
@@ -319,7 +322,8 @@
 <p>由於小圓的半徑是大圓半徑的一半（可以假設大圓半徑$R$，$T = \sqrt3R$，小圓圓心落在三角形重心上證明），小圓大圓面積比為$1:4$，因此長度大於 $T$ 的弦機率為$\frac{1}{4}$。</p>
 <p><img src="https://i.imgur.com/fLgOuOC.png" alt=""></p>
 <p>透過模擬得到機率約為$0.25$左右，當樣本數越高，機率會越精準。</p>
-<video src="<iframe width="560" height="315" src="https://www.youtube.com/embed/oF2DIPIAFcU" frameborder="0" allowfullscreen></iframe>" preload="metadata" controls playsinline poster="">Sorry, your browser does not support the video tag.</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oF2DIPIAFcU" frameborder="0" allowfullscreen></iframe>
+
 <p>將產生的弦描繪出來如下圖，跟前面兩個比起來，通過圓中心附近的弦數量較少：</p>
 <p><img src="https://i.imgur.com/kOaKQCL.png" alt="drawing" width="300"/></p>
 <h2 id="三者比較"><a href="#三者比較" class="headerlink" title="三者比較"></a>三者比較</h2><p>利用<em>matplotlib</em>畫出每條弦的中點並留下軌跡，可以得到下面的圖形，隨機端點與隨機半徑產生的圖形比較相近，集中在圓的中心，而隨機中點的分佈則十分平均。</p>
