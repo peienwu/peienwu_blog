@@ -55,18 +55,18 @@ $$\begin{align}f_{ave} &= \frac{1}{2\pi}\int_0^{2\pi} f(x)dx\\
 
 ### 角度 = 30度
 
-{%youtube gb37pmX-P6w %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gb37pmX-P6w" frameborder="0" allowfullscreen></iframe>
 
 ### 角度 = 15度
 
-{%youtube hWMe3eOZVyU%}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hWMe3eOZVyU" frameborder="0" allowfullscreen></iframe>
 
 ### 角度 = 1度
 
-{%youtube OpcFig66emQ%}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OpcFig66emQ" frameborder="0" allowfullscreen></iframe>
 
 ### 角度 = 0.5度
 
-{%youtube 2C0RBenG2yg %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2C0RBenG2yg" frameborder="0" allowfullscreen></iframe>
 
 這四個影片加起來的平均值都是半長軸$a$！

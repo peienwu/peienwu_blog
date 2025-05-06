@@ -28,7 +28,8 @@ Bertrand Paradox是Bertrand他在他的一本書中提到關於機率論的悖�
 
 以下影片為模擬隨機產生弦的狀況，弦長度大於 $T$ 機率約為$0.33$左右。
 
-{%youtube dJB3xVKWavI %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dJB3xVKWavI" frameborder="0" allowfullscreen></iframe>
+
 
 將產生的弦描繪出來如下圖：
 <img src="https://i.imgur.com/gbpWKKe.png" alt="drawing" width="300"/>
@@ -40,7 +41,9 @@ Bertrand Paradox是Bertrand他在他的一本書中提到關於機率論的悖�
 
 黃色與綠色線段長度相等，因此產生大於 $T$ 的弦長機率為$\frac{1}{2}$，約莫$0.5$左右。
 
-{%youtube sH-0lX4h1lw %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sH-0lX4h1lw" frameborder="0" allowfullscreen></iframe>
+
+@@ 方法3：隨機中點
 
 將產生的弦描繪出來如下圖：
 
@@ -56,7 +59,7 @@ Bertrand Paradox是Bertrand他在他的一本書中提到關於機率論的悖�
 
 透過模擬得到機率約為$0.25$左右，當樣本數越高，機率會越精準。
 
-{%youtube oF2DIPIAFcU %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oF2DIPIAFcU" frameborder="0" allowfullscreen></iframe>
 
 將產生的弦描繪出來如下圖，跟前面兩個比起來，通過圓中心附近的弦數量較少：
 
